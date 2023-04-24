@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "deploy-fb": "cd .output/server && rm -r node_modules && npm i && cd .. && firebase deploy",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.5",
+    "firebase-admin": "^11.7.0",
+    "firebase-functions": "^4.3.1",
+    "firebase-functions-test": "^3.1.0",
+    "nuxt": "^3.3.3"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.0.17",
+    "nuxt-headlessui": "^1.1.1"
+  }
+}
