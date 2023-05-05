@@ -13,7 +13,7 @@ const partners = [
 
   {
     name: "National Presort Inc.",
-    imageUrl: "",
+    imageUrl: "NpiLogo.webp",
     description:
       "National Presort Inc. has been at the forefront of developing technology in the mail sorting industry for twenty years. From 1977 through to the present day, National Presort has maintained its reputation for unique technological innovation with a series of key breakthroughs.\n\nNational Presort offers Argosy Post on its Omega, NP8000, NP4000, NP2000, and NP1000 mail sorting systems.",
     websiteName: "NPISorters.com",
@@ -24,8 +24,7 @@ const partners = [
 
   {
     name: "Engineering Innovation Inc.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+    imageUrl: "EiiLogo.webp",
     description:
       "Engineering Innovation, Inc. provides cost effective solutions for mailers wanting to take advantage of expanded flats discounts. With a modular approach that can grow with your business, Engineering Innovation provides solutions from enhanced manual workstations through fully automated OCR/Barcode/Sorting equipment for flats, letters and small parcels.",
     websiteName: "EII-Online.com",
@@ -36,7 +35,7 @@ const partners = [
 
   {
     name: "Solution Net Systems Inc.",
-    imageUrl: "",
+    imageUrl: "SnsiLogo.webp",
     description:
       "Solution Net Systems, Inc. services E-commerce, Pharma, Retail, Postal, Transportation, and Manufacturing enterprises with automated logistics solutions. We offer innovative solutions providing design, engineering, integration, installation, program management, and technical support.\n\nOur industry leading team has extensive global experience in developing solutions of all sizes. We can deliver an island of automation handling a single task or act as the prime contractor delivering a fully automated facility. As veteran integrators we do not align ourselves with a specific conveyor or technology supplier. Instead we find the best solution to meet the specific project needs.",
     websiteName: "SolutionNetSystems.com",
@@ -47,7 +46,7 @@ const partners = [
 
   {
     name: "DataLogic",
-    imageUrl: "",
+    imageUrl: "DatalogicLogo.webp",
     description:
       "Datalogic is a world-class producer of bar code readers, mobile computers, sensors for detection and safety, vision systems and laser marking systems.",
     websiteName: "Datalogic.com",
@@ -58,7 +57,7 @@ const partners = [
 
   {
     name: "Numina Group",
-    imageUrl: "",
+    imageUrl: "NuminaGroupLogo.webp",
     description:
       "Numina Group is a top tier designer and integrator of warehouse automation. We integrate cutting edge warehouse automation technologies with RDS™, our top tier Warehouse Control and Execution System (WCS-WES). The Numina Group partners with clients to define, design, and implement material handling and order fulfillment automation focused on the right processes and technologies to optimize distribution operations.\n\nNumina Group provides clients with a consultative design approach that uncovers and defines better processes, operational improvements, and identifies technologies that reduce labor costs, and improve storage and space utilization.",
     websiteName: "NuminaGroup.com",
@@ -69,7 +68,7 @@ const partners = [
 
   {
     name: "Honeywell",
-    imageUrl: "",
+    imageUrl: "HoneywellLogo.webp",
     description:
       "Honeywell International Inc. (NYSE: HON) is a Fortune 100 company that invents and manufactures solutions to address some of the world’s toughest challenges. Honeywell Scanning & Mobility offers the best value in products uniquely tailored for customers in markets such as retail, transportation, distribution, warehousing, and manufacturing. Working with companies like RAF Technology, Honeywell has developed alliances with industry leaders in software, technology, and services that offer customers innovative solutions that can address their most demanding business needs.",
     websiteName: "Honeywell.com",
@@ -80,7 +79,7 @@ const partners = [
 
   {
     name: "Zebra Technologies",
-    imageUrl: "",
+    imageUrl: "ZebraLogo.webp",
     description:
       "Zebra’s extensive portfolio of solutions give real-time visibility into everything from products and physical assets to people, providing very precise operational data not only about where things are, but what condition they are in. This allows business leaders to use data to make better, more informed decisions, respond in real-time and ultimately, help businesses understand how they work, and how they could work better.",
     websiteName: "Zebra.com",
@@ -91,7 +90,7 @@ const partners = [
 
   {
     name: "Parascript",
-    imageUrl: "",
+    imageUrl: "ParascriptLogo.webp",
     description:
       "Parascript is a leading provider of automated data capture software. Currently recognizing more than 68 million documents daily, Parascript’s Total Recognition technology converts paper-based information on mail, parcels, forms and checks into computer-useable data. It’s the only complete technology that recognizes all character types – cursive, handprint and machine print – on all forms.",
     websiteName: "Parascript.com",
@@ -102,7 +101,7 @@ const partners = [
 
   {
     name: "Global Data Consortium",
-    imageUrl: "",
+    imageUrl: "GdcLogo.webp",
     description:
       "Global Data Consortium (GDC) has teamed up with RAF Technology to bring together the most current, comprehensive, and accurate data from around the world with cutting-edge data treatment and fuzzy data matching technology all hosted through easy and effective web solutions or native software. GDC facilitates data, technology, and web solutions, helping customers access new markets and strengthen position in existing markets.",
     websiteName: "GlobalDataConsortium.com",
@@ -126,7 +125,7 @@ function useAsset(path: string): string {
   <!-- Logo cloud -->
   <div class="relative isolate -z-10 mt-32 sm:mt-48">
     <div
-      class="absolute mt-14 inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]"
+      class="absolute mt-1 inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]"
     >
       <svg
         class="h-[40rem] w-[80rem] flex-none stroke-gray-200"
@@ -183,18 +182,20 @@ function useAsset(path: string): string {
     </div>
   </div>
 
-  <ul
-    class="mx-20 mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
-  >
-    <PartnerCard
-      v-for="partner in partners"
-      :key="partner.name"
-      :name="partner.name"
-      :image-url="partner.imageUrl"
-      :website-name="partner.websiteName"
-      :website-url="partner.websiteUrl"
-      :linked-in-url="partner.linkedInUrl"
-      :description="partner.description"
-    ></PartnerCard>
-  </ul>
+  <div class="flex justify-center">
+    <ul
+      class="mx-20 mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
+    >
+      <PartnerCard
+        v-for="partner in partners"
+        :key="partner.name"
+        :name="partner.name"
+        :image-url="partner.imageUrl"
+        :website-name="partner.websiteName"
+        :website-url="partner.websiteUrl"
+        :linked-in-url="partner.linkedInUrl"
+        :description="partner.description"
+      ></PartnerCard>
+    </ul>
+  </div>
 </template>

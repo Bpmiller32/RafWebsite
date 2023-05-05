@@ -3,7 +3,7 @@ const posts = [
   {
     title: "Argosy Post 5.0 Official Release",
     date: "April 28, 2023",
-    image: "GeorgeProfile.webp",
+    image: "ArgosyPostArticle.webp",
     category: "Solutions",
     author: {
       name: "Bob Randall",
@@ -16,7 +16,7 @@ const posts = [
   {
     title: "Promat 2023",
     date: "Mar 6, 2023",
-    image: "GeorgeProfile.webp",
+    image: "PromatLogo.webp",
     category: "Marketing",
     author: {
       name: "George Harbachuk",
@@ -29,7 +29,7 @@ const posts = [
   {
     title: "Update on Cycle O",
     date: "February 2, 2023",
-    image: "GeorgeProfile",
+    image: "UspsArticle.webp",
     category: "News",
     author: {
       name: "Billy Miller",
@@ -40,6 +40,15 @@ const posts = [
       "The USPS recently held an update meeting on the CASS Cycle O processing cycle, which is set to begin on July 1st, 2023.\n\nCycle O will implement changes to the processing cycle that will enable the USPS to better validate and standardize addresses, resulting in improved accuracy and efficiency in mail delivery. The update will also provide more granular reporting, allowing mailers to better understand their mailing results and improve their address quality over time.\n\nHere is an updated calendar of events for Cycle O from the discussion:\n\n➡️ May 2023: Cycle N Data and Fullfillment Ends\n➡️ July 31st, 2023: Expiration of CASS Cycle N\n➡️ August 1st, 2023: Implementation of CASS Cycle O\n➡️ November 7th, 2023: NCOA Reporting Changes\n\nWe will keep you informed of any future updates we recieve from USPS and as always - please email us at support@raf.com if you have any questions.",
   },
 ];
+
+function useAsset(path) {
+  const assets = import.meta.glob("~/assets/**/*", {
+    eager: true,
+    import: "default",
+  });
+  // @ts-expect-error: wrong type info
+  return assets["/assets/" + path];
+}
 </script>
 
 <template>
@@ -47,7 +56,7 @@ const posts = [
   <div class="relative">
     <!-- Grid pattern -->
     <svg
-      class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
+      class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full hidden stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
       aria-hidden="true"
     >
       <defs>
@@ -107,20 +116,34 @@ const posts = [
     </div>
 
     <!-- Content: spotlight text and images -->
-    <div class="overflow-hidden">
-      <div class="mx-auto max-w-7xl px-6 pb-10 pt-48 sm:pt-60 lg:px-8 lg:pt-32">
+    <div class="relative">
+      <video
+        muted
+        autoplay
+        loop
+        :src="useAsset('IndexBackground.mp4')"
+        class="mt-40 opacity-50 w-screen h-screen max-h-[75rem] object-cover"
+      >
+        asdf
+      </video>
+
+      <div
+        class="absolute w-screen h-screen max-h-[75rem] bg-black inset-0 opacity-50"
+      ></div>
+
+      <div class="absolute mx-auto top-0 inset-x-0 max-w-7xl">
         <div
           class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center"
         >
           <!-- Spotlight text -->
           <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
             <h1
-              class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+              class="text-4xl font-bold tracking-tight text-zinc-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:text-6xl"
             >
               Global leader in pattern recognition.
             </h1>
             <p
-              class="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none"
+              class="relative mt-6 text-lg leading-8 text-zinc-200 sm:max-w-md lg:max-w-none"
             >
               At RAF, our goal is to provide advanced and reliable software that
               streamlines workflows, improves accuracy, and helps our clients
@@ -129,12 +152,12 @@ const posts = [
             <div class="mt-10 flex items-center gap-x-6">
               <NuxtLink
                 to="/solutions"
-                class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-zinc-100 shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                 >View solutions</NuxtLink
               >
               <NuxtLink
                 :to="{ path: '/about', hash: '#contactSection' }"
-                class="text-sm font-semibold leading-6 text-gray-900"
+                class="text-sm font-semibold leading-6 text-zinc-100"
                 >Contact us <span aria-hidden="true">→</span></NuxtLink
               >
             </div>

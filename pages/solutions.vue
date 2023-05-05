@@ -10,7 +10,7 @@
           >
             <img
               class="absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover shadow-2xl"
-              src="~/assets/ArgosyPostFeature.webp"
+              src="~/assets/ParcelVisionFeature.webp"
               alt=""
             />
           </div>
@@ -55,8 +55,8 @@
         <!-- 1st -->
         <div class="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
           <img
-            class="h-12 self-start"
-            src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg"
+            class="h-24 w-auto self-start"
+            src="~/assets/SmartMatchLogo.webp"
             alt=""
           />
           <figure class="mt-10 flex flex-auto flex-col justify-between">
@@ -89,8 +89,8 @@
           class="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20"
         >
           <img
-            class="h-12 self-start"
-            src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg"
+            class="h-24 w-auto self-start"
+            src="~/assets/SmartScriptLogo.webp"
             alt=""
           />
           <figure class="mt-10 flex flex-auto flex-col justify-between">
@@ -134,8 +134,8 @@
       >
         <div class="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
           <img
-            class="h-12 self-start"
-            src="https://tailwindui.com/img/logos/tuple-logo-gray-900.svg"
+            class="h-24 w-auto self-start"
+            src="~/assets/ArgosyLogo.webp"
             alt=""
           />
           <figure class="mt-10 flex flex-auto flex-col justify-between">
@@ -170,8 +170,8 @@
           class="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20"
         >
           <img
-            class="h-12 self-start"
-            src="https://tailwindui.com/img/logos/reform-logo-gray-900.svg"
+            class="h-24 w-auto self-start"
+            src="~/assets/CenLogo.webp"
             alt=""
           />
           <figure class="mt-10 flex flex-auto flex-col justify-between">

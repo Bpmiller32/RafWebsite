@@ -2,8 +2,12 @@
 import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
+import RafLogo from "~/assets/RafLogo.json";
+import { useMotion } from "@vueuse/motion";
 
 const year = new Date().getFullYear();
+
+const matwLink = ref();
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -14,6 +18,30 @@ const navigation = [
 ];
 
 const mobileMenuOpen = ref(false);
+
+const motionInstance = useMotion(matwLink, {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  enter: {
+    opacity: 1,
+    y: 0,
+  },
+});
+
+// function onEnter(el, done): void {
+//   useMotion(el, {
+//     initial: {
+//       opacity: 0,
+//       y: 100,
+//     },
+//     enter: {
+//       opacity: 1,
+//       y: 0,
+//     },
+//   });
+// }
 </script>
 
 <template>
@@ -25,8 +53,16 @@ const mobileMenuOpen = ref(false);
       <div class="flex lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
-          <NuxtLink to="/">
-            <img class="h-28 w-auto" src="~/assets/RafLogo.png" alt="" />
+          <NuxtLink class="flex" to="/">
+            <div class="h-28 w-1"></div>
+            <!-- <img class="h-28 w-auto" src="~/assets/RafLogo.png" alt="" /> -->
+            <ClientOnly>
+              <Vue3Lottie
+                :animationData="RafLogo"
+                class="h-28 w-28"
+                :loop="0"
+              />
+            </ClientOnly>
           </NuxtLink>
         </a>
       </div>
@@ -41,19 +77,80 @@ const mobileMenuOpen = ref(false);
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
+        <!-- <TransitionGroup :css="false" @enter="onEnter">
+          <NuxtLink
+            v-for="item in navigation"
+            :key="item.name"
+            class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+            :to="item.href"
+          >
+            {{ item.name }}
+          </NuxtLink>
+        </TransitionGroup> -->
+
         <NuxtLink
-          v-for="item in navigation"
-          :key="item.name"
-          class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-          :to="item.href"
+          v-motion
+          :initial="{ y: 10, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
+          :delay="0"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          to="/"
         >
-          {{ item.name }}
+          Home
+        </NuxtLink>
+
+        <NuxtLink
+          v-motion
+          :initial="{ y: 10, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
+          :delay="100"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          to="/solutions"
+        >
+          Solutions
+        </NuxtLink>
+
+        <NuxtLink
+          v-motion
+          :initial="{ y: 10, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
+          :delay="300"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          to="/partners"
+        >
+          Partners
+        </NuxtLink>
+
+        <NuxtLink
+          v-motion
+          :initial="{ y: 10, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
+          :delay="500"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          to="/whitepapers"
+        >
+          Whitepapers
+        </NuxtLink>
+
+        <NuxtLink
+          v-motion
+          :initial="{ y: 10, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
+          :delay="700"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          to="/about"
+        >
+          About RAF
         </NuxtLink>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
+          v-motion
+          :initial="{ y: 10, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
+          :delay="900"
           href="http://matthewsautomation.com/"
-          class="text-sm font-semibold leading-6 text-gray-900"
+          class="opacity-0 text-sm font-semibold leading-6 text-gray-900"
           >Matthews Automation <span aria-hidden="true">&rarr;</span></a
         >
       </div>
@@ -71,11 +168,7 @@ const mobileMenuOpen = ref(false);
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img
-              class="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+            <img class="h-8 w-auto" src="~/assets/RafMobileLogo.webp" alt="" />
           </a>
           <button
             type="button"
@@ -111,7 +204,13 @@ const mobileMenuOpen = ref(false);
   </header>
 
   <!-- Page content -->
-  <div>
+  <div
+    v-motion
+    :initial="{ y: 30, opacity: 0 }"
+    :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+    :delay="0"
+    class="opacity-0"
+  >
     <slot></slot>
   </div>
 

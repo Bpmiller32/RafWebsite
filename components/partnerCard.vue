@@ -22,7 +22,7 @@ function useAsset(path: string): string {
 <template>
   <li :id="props.name" class="flex flex-col gap-6 xl:flex-row">
     <img
-      class="w-52 h-16 object-cover flex-none rounded-2xl"
+      class="w-52 h-24 object-contain flex-none rounded-2xl"
       :src="useAsset(props.imageUrl)"
       alt=""
     />
