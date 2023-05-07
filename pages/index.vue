@@ -1,4 +1,6 @@
 <script setup>
+import { useMouseInElement } from "@vueuse/core";
+
 const posts = [
   {
     title: "Argosy Post 5.0 Official Release",
@@ -41,6 +43,103 @@ const posts = [
   },
 ];
 
+const spotCard1 = ref(null);
+const spotCard2 = ref(null);
+const spotCard3 = ref(null);
+const spotCard4 = ref(null);
+
+const {
+  elementX: spot1X,
+  elementY: spot1Y,
+  isOutside: spot1Outside,
+  elementHeight: spot1Height,
+  elementWidth: spot1Width,
+} = useMouseInElement(spotCard1);
+const {
+  elementX: spot2X,
+  elementY: spot2Y,
+  isOutside: spot2Outside,
+  elementHeight: spot2Height,
+  elementWidth: spot2Width,
+} = useMouseInElement(spotCard2);
+const {
+  elementX: spot3X,
+  elementY: spot3Y,
+  isOutside: spot3Outside,
+  elementHeight: spot3Height,
+  elementWidth: spot3Width,
+} = useMouseInElement(spotCard3);
+const {
+  elementX: spot4X,
+  elementY: spot4Y,
+  isOutside: spot4Outside,
+  elementHeight: spot4Height,
+  elementWidth: spot4Width,
+} = useMouseInElement(spotCard4);
+
+const spot1Transform = computed(() => {
+  return CardTransform(
+    spot1X.value,
+    spot1Y.value,
+    spot1Outside.value,
+    spot1Height.value,
+    spot1Width.value
+  );
+});
+const spot2Transform = computed(() => {
+  return CardTransform(
+    spot2X.value,
+    spot2Y.value,
+    spot2Outside.value,
+    spot2Height.value,
+    spot2Width.value
+  );
+});
+const spot3Transform = computed(() => {
+  return CardTransform(
+    spot3X.value,
+    spot3Y.value,
+    spot3Outside.value,
+    spot3Height.value,
+    spot3Width.value
+  );
+});
+const spot4Transform = computed(() => {
+  return CardTransform(
+    spot4X.value,
+    spot4Y.value,
+    spot4Outside.value,
+    spot4Height.value,
+    spot4Width.value
+  );
+});
+
+function CardTransform(
+  elementX,
+  elementY,
+  isOutside,
+  elementHeight,
+  elementWidth
+) {
+  const maxRotation = 6;
+
+  const rotateX = (
+    maxRotation / 2 -
+    (elementY / elementHeight) * maxRotation
+  ).toFixed(2);
+
+  const rotateY = (
+    maxRotation / 2 -
+    (elementX / elementWidth) * maxRotation
+  ).toFixed(2);
+
+  if (isOutside) {
+    return "";
+  } else {
+    return `perspective(${elementWidth}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  }
+}
+
 function useAsset(path) {
   const assets = import.meta.glob("~/assets/**/*", {
     eager: true,
@@ -53,165 +152,146 @@ function useAsset(path) {
 
 <template>
   <!-- Spotlight section -->
+
+  <!-- Spotlight text and images -->
   <div class="relative">
-    <!-- Grid pattern -->
-    <svg
-      class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full hidden stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-      aria-hidden="true"
-    >
-      <defs>
-        <pattern
-          id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-          width="200"
-          height="200"
-          x="50%"
-          y="-1"
-          patternUnits="userSpaceOnUse"
-        >
-          <path d="M.5 200V.5H200" fill="none" />
-        </pattern>
-      </defs>
-      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-        <path
-          d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-          stroke-width="0"
-        />
-      </svg>
-      <rect
-        width="100%"
-        height="100%"
-        stroke-width="0"
-        fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-      />
-    </svg>
+    <video
+      muted
+      autoplay
+      loop
+      :src="useAsset('IndexBackground.mp4')"
+      class="mt-40 opacity-50 w-screen h-screen max-h-[75rem] object-cover"
+    ></video>
 
-    <!-- Color splashes -->
     <div
-      class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
-      aria-hidden="true"
-    >
-      <div
-        class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#048647] to-[#3abf72] opacity-30"
-        style="
-          clip-path: polygon(
-            63.1% 29.5%,
-            100% 17.1%,
-            76.6% 3%,
-            48.4% 0%,
-            44.6% 4.7%,
-            54.5% 25.3%,
-            59.8% 49%,
-            55.2% 57.8%,
-            44.4% 57.2%,
-            27.8% 47.9%,
-            35.1% 81.5%,
-            0% 97.7%,
-            39.2% 100%,
-            35.2% 81.4%,
-            97.2% 52.8%,
-            63.1% 29.5%
-          );
-        "
-      />
-    </div>
+      class="absolute w-screen h-screen max-h-[75rem] bg-black inset-0 opacity-50"
+    ></div>
 
-    <!-- Content: spotlight text and images -->
-    <div class="relative">
-      <video
-        muted
-        autoplay
-        loop
-        :src="useAsset('IndexBackground.mp4')"
-        class="mt-40 opacity-50 w-screen h-screen max-h-[75rem] object-cover"
+    <div class="absolute mx-auto top-0 inset-x-0 max-w-7xl">
+      <div
+        class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center"
       >
-        asdf
-      </video>
-
-      <div
-        class="absolute w-screen h-screen max-h-[75rem] bg-black inset-0 opacity-50"
-      ></div>
-
-      <div class="absolute mx-auto top-0 inset-x-0 max-w-7xl">
-        <div
-          class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center"
-        >
-          <!-- Spotlight text -->
-          <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
-            <h1
-              class="text-4xl font-bold tracking-tight text-zinc-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:text-6xl"
+        <!-- Spotlight text -->
+        <div class="w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+          <h1
+            class="text-4xl font-bold tracking-tight text-zinc-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:text-6xl"
+          >
+            Global leader in pattern recognition.
+          </h1>
+          <p
+            class="relative mt-6 text-lg leading-8 text-zinc-200 sm:max-w-md lg:max-w-none"
+          >
+            At RAF, our goal is to provide advanced and reliable software that
+            streamlines workflows, improves accuracy, and helps our clients make
+            better-informed decisions based on visual data.
+          </p>
+          <div class="mt-10 flex items-center gap-x-6">
+            <NuxtLink
+              to="/solutions"
+              class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-zinc-100 shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+              >View solutions</NuxtLink
             >
-              Global leader in pattern recognition.
-            </h1>
-            <p
-              class="relative mt-6 text-lg leading-8 text-zinc-200 sm:max-w-md lg:max-w-none"
+            <NuxtLink
+              :to="{ path: '/about', hash: '#contactSection' }"
+              class="text-sm font-semibold leading-6 text-zinc-100"
+              >Contact us <span aria-hidden="true">→</span></NuxtLink
             >
-              At RAF, our goal is to provide advanced and reliable software that
-              streamlines workflows, improves accuracy, and helps our clients
-              make better-informed decisions based on visual data.
-            </p>
-            <div class="mt-10 flex items-center gap-x-6">
-              <NuxtLink
-                to="/solutions"
-                class="rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-zinc-100 shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
-                >View solutions</NuxtLink
-              >
-              <NuxtLink
-                :to="{ path: '/about', hash: '#contactSection' }"
-                class="text-sm font-semibold leading-6 text-zinc-100"
-                >Contact us <span aria-hidden="true">→</span></NuxtLink
-              >
-            </div>
           </div>
+        </div>
 
-          <!-- Spotlight images -->
+        <!-- Spotlight images -->
+        <div
+          class="mt-14 ml-28 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-7 lg:pl-0"
+        >
           <div
-            class="mt-14 ml-28 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-7 lg:pl-0"
+            class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36"
           >
             <div
-              class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36"
+              ref="spotCard1"
+              class="relative opacity-0"
+              v-motion
+              :initial="{ y: 30, opacity: 0 }"
+              :enter="{ y: 0, opacity: 1, transition: { duration: 500 } }"
+              :delay="0"
+              :style="{
+                transform: spot1Transform,
+                transition: 'transform 0.25s ease-out',
+              }"
             >
-              <div class="relative">
-                <img
-                  src="~/assets/ArgosyPostFeature.webp"
-                  alt=""
-                  class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                />
-                <div
-                  class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
-                />
-              </div>
-              <div class="relative">
-                <img
-                  src="~/assets/ParcelVisionFeature.webp"
-                  alt=""
-                  class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                />
-                <div
-                  class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
-                />
-              </div>
+              <img
+                src="~/assets/ArgosyPostFeature.webp"
+                alt=""
+                class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+              />
+              <div
+                class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
+              />
             </div>
-            <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
-              <div class="relative">
-                <img
-                  src="~/assets/SmartMatchFeature.webp"
-                  alt=""
-                  class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                />
-                <div
-                  class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
-                />
-              </div>
-              <div class="relative">
-                <img
-                  src="~/assets/SmartScriptFeature.webp"
-                  alt=""
-                  class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                />
-                <div
-                  class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
-                />
-              </div>
+
+            <div
+              ref="spotCard2"
+              class="relative opacity-0"
+              v-motion
+              :initial="{ y: 30, opacity: 0 }"
+              :enter="{ y: 0, opacity: 1, transition: { duration: 500 } }"
+              :delay="400"
+              :style="{
+                transform: spot2Transform,
+                transition: 'transform 0.25s ease-out',
+              }"
+            >
+              <img
+                src="~/assets/ParcelVisionFeature.webp"
+                alt=""
+                class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+              />
+              <div
+                class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
+              />
+            </div>
+          </div>
+          <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
+            <div
+              ref="spotCard3"
+              class="relative opacity-0"
+              v-motion
+              :initial="{ y: 30, opacity: 0 }"
+              :enter="{ y: 0, opacity: 1, transition: { duration: 500 } }"
+              :delay="600"
+              :style="{
+                transform: spot3Transform,
+                transition: 'transform 0.25s ease-out',
+              }"
+            >
+              <img
+                src="~/assets/SmartMatchFeature.webp"
+                alt=""
+                class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+              />
+              <div
+                class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
+              ></div>
+            </div>
+            <div
+              ref="spotCard4"
+              class="relative opacity-0"
+              v-motion
+              :initial="{ y: 30, opacity: 0 }"
+              :enter="{ y: 0, opacity: 1, transition: { duration: 500 } }"
+              :delay="200"
+              :style="{
+                transform: spot4Transform,
+                transition: 'transform 0.25s ease-out',
+              }"
+            >
+              <img
+                src="~/assets/SmartScriptFeature.webp"
+                alt=""
+                class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+              />
+              <div
+                class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10"
+              ></div>
             </div>
           </div>
         </div>
@@ -247,3 +327,12 @@ function useAsset(path) {
     </div>
   </div>
 </template>
+
+<style>
+.navButton {
+  transition: all 0.5s ease;
+}
+.navButton:hover {
+  box-shadow: inset 0 0 0 50px #f3f4f6;
+}
+</style>

@@ -29,23 +29,22 @@ const motionInstance = useMotion(matwLink, {
     y: 0,
   },
 });
-
-// function onEnter(el, done): void {
-//   useMotion(el, {
-//     initial: {
-//       opacity: 0,
-//       y: 100,
-//     },
-//     enter: {
-//       opacity: 1,
-//       y: 0,
-//     },
-//   });
-// }
 </script>
 
 <template>
-  <header class="absolute inset-x-0 top-0 z-40">
+  <header class="absolute inset-x-0 top-0 z-40 shadow-sm">
+    <!-- Nav background slant -->
+    <div
+      class="-z-20 h-40 absolute overflow-hidden bg-green-200/20 inset-x-0 top-0 opacity-0"
+      v-motion
+      :initial="{ opacity: 0 }"
+      :enter="{ opacity: 1, transition: { duration: 1200 } }"
+      :delay="0"
+    ></div>
+    <div
+      class="bg-white max-h-40 absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] sm:-mr-80 lg:-mr-96"
+    ></div>
+
     <nav
       class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       aria-label="Global"
@@ -93,7 +92,7 @@ const motionInstance = useMotion(matwLink, {
           :initial="{ y: 10, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
           :delay="0"
-          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/"
         >
           Home
@@ -104,7 +103,7 @@ const motionInstance = useMotion(matwLink, {
           :initial="{ y: 10, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
           :delay="100"
-          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/solutions"
         >
           Solutions
@@ -115,7 +114,7 @@ const motionInstance = useMotion(matwLink, {
           :initial="{ y: 10, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
           :delay="300"
-          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/partners"
         >
           Partners
@@ -126,7 +125,7 @@ const motionInstance = useMotion(matwLink, {
           :initial="{ y: 10, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
           :delay="500"
-          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/whitepapers"
         >
           Whitepapers
@@ -137,7 +136,7 @@ const motionInstance = useMotion(matwLink, {
           :initial="{ y: 10, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 200 } }"
           :delay="700"
-          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+          class="opacity-0 -mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/about"
         >
           About RAF
@@ -204,15 +203,7 @@ const motionInstance = useMotion(matwLink, {
   </header>
 
   <!-- Page content -->
-  <div
-    v-motion
-    :initial="{ y: 30, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-    :delay="0"
-    class="opacity-0"
-  >
-    <slot></slot>
-  </div>
+  <slot></slot>
 
   <footer>
     <div
@@ -225,3 +216,12 @@ const motionInstance = useMotion(matwLink, {
     </div>
   </footer>
 </template>
+
+<style>
+.hoverFill {
+  transition: all 0.5s ease;
+}
+.hoverFill:hover {
+  box-shadow: inset 0 0 0 50px #f3f4f6;
+}
+</style>
