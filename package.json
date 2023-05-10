@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.17",
+    "@lucien144/vue3-parallaxy": "^0.1.0",
     "@vueuse/motion": "^2.0.0-beta.27",
     "nuxt-headlessui": "^1.1.1",
     "vue3-lottie": "^2.7.0"

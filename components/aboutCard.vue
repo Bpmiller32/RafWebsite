@@ -1,12 +1,20 @@
 <script setup lang="ts">
 const props = defineProps(["person"]);
+
+function useAsset(path) {
+  const assets = import.meta.glob("~/assets/**/*", {
+    eager: true,
+    import: "default",
+  });
+  return assets["/assets/" + path];
+}
 </script>
 
 <template>
   <div :key="props.person.name" class="flex flex-col gap-10 pt-12 sm:flex-row">
     <img
       class="aspect-[4/5] w-52 flex-none rounded-2xl max-h-52 object-cover"
-      :src="props.person.imageUrl"
+      :src="useAsset(props.person.imageUrl)"
       alt=""
     />
     <div class="max-w-xl flex-auto">

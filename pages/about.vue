@@ -1,10 +1,6 @@
 <script setup>
 import { LinkIcon } from "@heroicons/vue/24/outline";
-import {
-  BuildingOffice2Icon,
-  EnvelopeIcon,
-  PhoneIcon,
-} from "@heroicons/vue/24/outline";
+import { BuildingOffice2Icon, PhoneIcon } from "@heroicons/vue/24/outline";
 
 const timeline = [
   {
@@ -53,8 +49,7 @@ const people = [
   {
     name: "Dave Reeves",
     role: "Cheif Executive Officer",
-    imageUrl:
-      "https://storage.googleapis.com/bpmillerwebsitestorage/dave_reeves.jpg",
+    imageUrl: "DaveAbout.jpg",
     bio: "A proven corporate executive with over 20 years experience in the technology industry. Dave has been an executive or adviser in transactions totaling in excess of $500 million and has a successful track record of leading technology businesses. Prior to being appointed CEO, Dave joined RAF as the Chief Financial Officer in November 2004. Previously Dave served as the CFO of Mindplay LLC, the leading provider of table management systems for the gaming industy. Mindplay was acquired in 2004 by Bally Gaming. Dave joined Mindplay from Wavtrace Inc., a broadband telecommunications equipment manufacturer, where he was the CFO and successfully negotiated a strategic partnering transaction, investment from and sale to Harris Corporation. He has a broad base of leadership, financial, accounting and administrative experience including capital raising, system implementation and financial reporting. Dave holds a B.A. in quantitative economics from Stanford University.",
     twitterUrl: "#",
     linkedinUrl: "https://www.linkedin.com/in/dave-reeves-2a854",
@@ -62,93 +57,45 @@ const people = [
   {
     name: "William Brandt",
     role: "Vice President of Buisiness Development",
-    imageUrl:
-      "https://storage.googleapis.com/bpmillerwebsitestorage/bill_brandt.jpg",
+    imageUrl: "BillAbout.jpg",
     twitterUrl: "#",
     linkedinUrl: "#",
   },
   {
     name: "George Harbachuk",
     role: "Vice President of Marketing",
-    imageUrl:
-      "https://storage.googleapis.com/bpmillerwebsitestorage/george_harbachuk.jpg",
+    imageUrl: "GeorgeAbout.jpg",
     twitterUrl: "#",
     linkedinUrl: "https://www.linkedin.com/in/george-harbachuk-1ab9964",
   },
   {
     name: "Christopher Traina",
     role: "Director of Engineering",
-    imageUrl: "https://storage.googleapis.com/bpmillerwebsitestorage/chris.jpg",
+    imageUrl: "ChrisAbout.jpg",
     twitterUrl: "#",
     linkedinUrl: "https://www.linkedin.com/in/chris-traina-08070324",
   },
   // More people...
 ];
+
+function useAsset(path) {
+  const assets = import.meta.glob("~/assets/**/*", {
+    eager: true,
+    import: "default",
+  });
+  // @ts-expect-error: wrong type info
+  return assets["/assets/" + path];
+}
 </script>
 
 <template>
-  <main class="mt-48">
-    <!-- Hero section -->
-    <div class="relative isolate -z-10">
-      <svg
-        class="absolute inset-x-0 top-0 -z-10 h-[64rem] w-full stroke-gray-200 [mask-image:radial-gradient(32rem_32rem_at_center,white,transparent)]"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
-            width="200"
-            height="200"
-            x="50%"
-            y="-1"
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
-          <path
-            d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-            stroke-width="0"
-          />
-        </svg>
-        <rect
-          width="100%"
-          height="100%"
-          stroke-width="0"
-          fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
-        />
-      </svg>
-      <div
-        class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
-        aria-hidden="true"
-      >
-        <div
-          class="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#58d6ac] to-[#2ace7c] opacity-30"
-          style="
-            clip-path: polygon(
-              63.1% 29.5%,
-              100% 17.1%,
-              76.6% 3%,
-              48.4% 0%,
-              44.6% 4.7%,
-              54.5% 25.3%,
-              59.8% 49%,
-              55.2% 57.8%,
-              44.4% 57.2%,
-              27.8% 47.9%,
-              35.1% 81.5%,
-              0% 97.7%,
-              39.2% 100%,
-              35.2% 81.4%,
-              97.2% 52.8%,
-              63.1% 29.5%
-            );
-          "
-        />
-      </div>
-    </div>
-
+  <main
+    v-motion
+    :initial="{ y: 30, opacity: 0 }"
+    :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+    :delay="0"
+    class="mt-48 opacity-0"
+  >
     <!-- Content section -->
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
@@ -171,7 +118,7 @@ const people = [
                 Matthews Automation Solutions (a Matthews International company,
                 <span class="inline-flex"
                   ><a
-                    class="text-blue-500 flex"
+                    class="text-green-500 flex"
                     href="https://www.matw.com/investors/stock-data/quote"
                   >
                     <p>NASDAQ: MATW</p>
@@ -208,6 +155,10 @@ const people = [
                   {{ stat.value }}
                 </dd>
               </div>
+
+              <div
+                class="clip aspect-square overflow-hidden flex flex-col justify-center"
+              ></div>
             </dl>
           </div>
         </div>
@@ -215,7 +166,7 @@ const people = [
     </div>
 
     <!-- Timeline section -->
-    <div class="mx-auto mt-32 max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div
         class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4"
       >
@@ -252,7 +203,7 @@ const people = [
     <!-- Image section -->
     <div class="mt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
       <img
-        src="https://storage.googleapis.com/bpmillerwebsitestorage/CompanyGroupPhoto.webp"
+        :src="useAsset('GroupPhoto.webp')"
         alt=""
         class="aspect-[5/2] w-full object-cover xl:rounded-3xl"
       />
@@ -361,7 +312,14 @@ const people = [
   </main>
 
   <!-- Contact section -->
-  <div id="contactSection" class="mt-32">
+  <div
+    v-motion
+    :initial="{ y: 30, opacity: 0 }"
+    :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+    :delay="0"
+    id="contactSection"
+    class="mt-32"
+  >
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div
         class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none"

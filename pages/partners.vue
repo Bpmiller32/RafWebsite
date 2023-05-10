@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue";
+
 const partners = [
   {
     name: "BlueCrest",
@@ -123,79 +125,57 @@ function useAsset(path: string): string {
 
 <template>
   <!-- Logo cloud -->
-  <div class="relative isolate -z-10 mt-32 sm:mt-48">
-    <div
-      class="absolute mt-1 inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]"
-    >
-      <svg
-        class="h-[40rem] w-[80rem] flex-none stroke-gray-200"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="e9033f3e-f665-41a6-84ef-756f6778e6fe"
-            width="200"
-            height="200"
-            x="50%"
-            y="50%"
-            patternUnits="userSpaceOnUse"
-            patternTransform="translate(-100 0)"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y="50%" class="overflow-visible fill-gray-50">
-          <path
-            d="M-300 0h201v201h-201Z M300 200h201v201h-201Z"
-            stroke-width="0"
-          />
-        </svg>
-        <rect
-          width="100%"
-          height="100%"
-          stroke-width="0"
-          fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)"
-        />
-      </svg>
-    </div>
+  <div class="mt-32 sm:mt-48">
     <div class="mx-auto max-w-7xl px-6 mt-48 sm:mt-0 lg:px-8">
-      <h2 class="text-center text-lg font-semibold leading-8 text-gray-900">
+      <h2
+        v-motion
+        :initial="{ y: 30, opacity: 0 }"
+        :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+        :delay="0"
+        class="text-center text-lg font-semibold leading-8 text-gray-900 opacity-0"
+      >
         Trusted by the world’s most innovative teams
       </h2>
-      <div
-        class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5"
-      >
-        <NuxtLink
-          v-for="partner in partners"
-          :to="{ path: '/partners', hash: '#' + partner.name }"
-          class="z-10 text-sm font-semibold leading-6 text-gray-900"
+      <TabGroup>
+        <TabList
+          v-motion
+          :initial="{ y: 30, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+          :delay="0"
+          class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 opacity-0"
         >
-          <img
-            class="col-span-2 w-full lg:col-span-1"
-            :src="useAsset(partner.imageUrl)"
-            :alt="partner.name"
-            width="158"
-            height="48"
-          />
-        </NuxtLink>
-      </div>
+          <Tab
+            v-for="partner in partners"
+            class="z-10 text-sm font-semibold leading-6 text-gray-900"
+          >
+            <img
+              class="col-span-2 w-full lg:col-span-1"
+              :src="useAsset(partner.imageUrl)"
+              :alt="partner.name"
+              width="158"
+              height="48"
+            />
+          </Tab>
+        </TabList>
+        <TabPanels
+          v-motion
+          :initial="{ y: 30, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+          :delay="250"
+          class="flex justify-center mt-10 pt-10 opacity-0 border-t"
+        >
+          <TabPanel v-for="partner in partners" :key="partner.name">
+            <PartnerCard
+              :name="partner.name"
+              :image-url="partner.imageUrl"
+              :website-name="partner.websiteName"
+              :website-url="partner.websiteUrl"
+              :linked-in-url="partner.linkedInUrl"
+              :description="partner.description"
+            ></PartnerCard>
+          </TabPanel>
+        </TabPanels>
+      </TabGroup>
     </div>
-  </div>
-
-  <div class="flex justify-center">
-    <ul
-      class="mx-20 mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
-    >
-      <PartnerCard
-        v-for="partner in partners"
-        :key="partner.name"
-        :name="partner.name"
-        :image-url="partner.imageUrl"
-        :website-name="partner.websiteName"
-        :website-url="partner.websiteUrl"
-        :linked-in-url="partner.linkedInUrl"
-        :description="partner.description"
-      ></PartnerCard>
-    </ul>
   </div>
 </template>

@@ -21,11 +21,13 @@ function useAsset(path: string): string {
 
 <template>
   <li :id="props.name" class="flex flex-col gap-6 xl:flex-row">
-    <img
-      class="w-52 h-24 object-contain flex-none rounded-2xl"
-      :src="useAsset(props.imageUrl)"
-      alt=""
-    />
+    <div class="flex justify-center xl:block">
+      <img
+        class="w-52 h-24 object-contain flex-none rounded-2xl"
+        :src="useAsset(props.imageUrl)"
+        alt=""
+      />
+    </div>
     <div class="max-w-sm">
       <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">
         {{ props.name }}
@@ -64,11 +66,10 @@ function useAsset(path: string): string {
         <a
           v-if="props.linkedInUrl"
           :href="props.linkedInUrl"
-          class="mr-4 text-gray-400 hover:text-gray-500"
+          class="flex items-center mr-4 text-gray-400 hover:text-gray-500"
         >
-          <span class="sr-only">LinkedIn</span>
           <svg
-            class="h-5 w-5"
+            class="h-5 w-5 mr-1"
             aria-hidden="true"
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -79,6 +80,8 @@ function useAsset(path: string): string {
               clip-rule="evenodd"
             />
           </svg>
+
+          <p class="text-gray-600">LinkedIn</p>
         </a>
 
         <a
