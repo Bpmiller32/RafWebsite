@@ -34,7 +34,7 @@ function useAsset(path: string): string {
             >
               <img
                 class="absolute inset-0 h-full w-full rounded-2xl bg-gray-800 object-cover lg:object-top shadow-2xl"
-                src="~/assets/ParcelVisionFeature2.webp"
+                src="~/assets/ParcelVisionFeature.webp"
                 alt=""
               />
             </div>
@@ -330,7 +330,7 @@ function useAsset(path: string): string {
             >
               <img
                 class="absolute inset-0 h-full w-full object-cover"
-                :src="useAsset('ArgosyPostArticle2.webp')"
+                :src="useAsset('ArgosyPostSolution.webp')"
                 alt=""
               />
             </div>
