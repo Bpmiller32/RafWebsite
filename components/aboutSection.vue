@@ -8,7 +8,7 @@ const props = defineProps(["person"]);
     <img
       class="aspect-[4/5] w-52 flex-none rounded-2xl max-h-52 object-cover"
       :src="useAsset(props.person.image)"
-      alt=""
+      :alt="'Portrait of ' + props.person.name"
     />
 
     <div class="max-w-xl flex-auto">

@@ -54,6 +54,7 @@ const posts = [
       autoplay
       loop
       playsinline
+      :poster="useAsset('IndexBackground.webp')"
       :src="useAsset('IndexBackground.mp4')"
       class="mt-40 opacity-50 w-screen h-screen max-h-[50rem] object-cover"
     ></video>
@@ -92,11 +93,13 @@ const posts = [
             <NuxtLink
               to="/solutions"
               class="duration-500 rounded-md bg-green-600 px-3.5 py-2.5 text-sm font-semibold text-zinc-100 shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+              aria-label="Go to solutions"
               >View solutions</NuxtLink
             >
             <NuxtLink
               :to="{ path: '/about', hash: '#contactSection' }"
               class="text-sm font-semibold leading-6 text-zinc-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]"
+              aria-label="Go to contact section"
               >Contact us <span aria-hidden="true">→</span></NuxtLink
             >
           </div>

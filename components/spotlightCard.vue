@@ -56,7 +56,10 @@ const imageTransform = computed(() => {
 </script>
 
 <template>
-  <NuxtLink :to="{ path: '/solutions', hash: props.link }">
+  <NuxtLink
+    :to="{ path: '/solutions', hash: props.link }"
+    :aria-label="'Go to ' + props.link"
+  >
     <div
       v-if="anmiationEnabled === true"
       ref="imageRef"
@@ -72,7 +75,7 @@ const imageTransform = computed(() => {
     >
       <img
         :src="useAsset(props.image)"
-        alt=""
+        :alt="'Solution link for' + props.link"
         class="mb-8 aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg hover:drop-shadow-[0_5px_15px_#000000]"
       />
       <div
@@ -83,7 +86,7 @@ const imageTransform = computed(() => {
     <div v-if="anmiationEnabled === false" class="relative opacity-100">
       <img
         :src="useAsset(props.image)"
-        alt=""
+        :alt="'Solution link for' + props.link"
         class="mb-8 aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
       />
       <div

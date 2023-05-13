@@ -67,7 +67,7 @@ const imageTransform = computed(() => {
               >
                 <button
                   type="button"
-                  class="absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
+                  class="outline-none absolute right-4 top-4 text-gray-400 hover:text-gray-500 sm:right-6 sm:top-8 md:right-6 md:top-6 lg:right-8 lg:top-8"
                   @click="open = false"
                 >
                   <span class="sr-only">Close</span>
@@ -83,7 +83,7 @@ const imageTransform = computed(() => {
                     >
                       <img
                         :src="useAsset(props.image)"
-                        alt=""
+                        :alt="'Article image for ' + props.title"
                         class="object-cover object-center"
                       />
                     </div>
@@ -136,7 +136,7 @@ const imageTransform = computed(() => {
       <img
         ref="imageRef"
         :src="useAsset(props.image)"
-        alt=""
+        :alt="'Article image for ' + props.title"
         class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
         :style="{
           transform: imageTransform,
@@ -176,7 +176,7 @@ const imageTransform = computed(() => {
       <div class="relative mt-8 flex items-center gap-x-4">
         <img
           :src="useAsset(props.author.image)"
-          alt=""
+          :alt="'Article author picture for ' + props.author.name"
           class="h-10 w-10 rounded-full bg-gray-100"
         />
         <div class="text-sm leading-6">

@@ -106,7 +106,7 @@ const partners = [
 
 <template>
   <!-- Logo cloud -->
-  <div class="mt-32 sm:mt-48">
+  <main class="mt-32 sm:mt-48">
     <div class="mx-auto max-w-7xl px-6 mt-48 sm:mt-0 lg:px-8">
       <!-- Heading -->
       <h2
@@ -126,40 +126,47 @@ const partners = [
           :initial="{ y: 30, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
           :delay="0"
-          class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-3 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 opacity-0"
+          class="mx-auto mt-10 grid max-w-lg grid-cols-2 items-center gap-x-2 gap-y-2 sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none lg:grid-cols-5 opacity-0"
         >
           <Tab
             v-for="partner in partners"
-            class="z-10 text-sm font-semibold leading-6 text-gray-900"
+            v-slot="{ selected }"
+            class="outline-none"
           >
             <img
-              class="col-span-2 w-full lg:col-span-1"
+              :class="{
+                'col-span-2 w-full lg:col-span-1 rounded-lg border border-white duration-500': true,
+                'shadow-lg border-zinc-400': selected,
+                'hover:shadow-md hover:border-zinc-200': !selected,
+              }"
               :src="useAsset(partner.imageUrl)"
-              :alt="partner.name"
-              width="158"
-              height="48"
+              :alt="'Company logo for ' + partner.name"
             />
           </Tab>
         </TabList>
         <TabPanels
           v-motion
-          :initial="{ y: 30, opacity: 0 }"
-          :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+          :initial="{ opacity: 0 }"
+          :enter="{ opacity: 1, transition: { duration: 1200 } }"
           :delay="250"
           class="flex justify-center mt-10 pt-10 opacity-0 border-t"
         >
           <TabPanel v-for="partner in partners" :key="partner.name">
             <PartnerCard
+              v-motion
+              :initial="{ y: 30, opacity: 0 }"
+              :enter="{ y: 0, opacity: 1, transition: { duration: 500 } }"
+              :delay="0"
               :name="partner.name"
               :image-url="partner.imageUrl"
               :website-name="partner.websiteName"
               :website-url="partner.websiteUrl"
               :linked-in-url="partner.linkedInUrl"
               :description="partner.description"
-            ></PartnerCard>
+            />
           </TabPanel>
         </TabPanels>
       </TabGroup>
     </div>
-  </div>
+  </main>
 </template>

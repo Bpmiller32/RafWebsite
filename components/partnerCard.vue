@@ -13,9 +13,9 @@ const props = defineProps([
   <div class="flex flex-col gap-6 xl:flex-row">
     <div class="flex justify-center xl:block">
       <img
-        class="w-52 h-24 object-contain flex-none rounded-2xl"
+        class="w-52 h-52 object-contain flex-none rounded-2xl border"
         :src="useAsset(props.imageUrl)"
-        alt=""
+        :alt="'Company logo for ' + props.name"
       />
     </div>
     <div class="max-w-sm">

@@ -93,7 +93,7 @@ const people = [
           v-motion
           :initial="{ y: 30, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-          :delay="250"
+          :delay="0"
           class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl opacity-0"
         >
           Company overview
@@ -105,7 +105,7 @@ const people = [
             v-motion
             :initial="{ y: 30, opacity: 0 }"
             :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-            :delay="250"
+            :delay="0"
             class="lg:w-full lg:max-w-2xl lg:flex-auto opacity-0"
           >
             <p class="text-xl leading-8 text-gray-600">
@@ -245,7 +245,7 @@ const people = [
       <section class="mt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
         <img
           :src="useAsset('GroupPhoto.webp')"
-          alt=""
+          alt="RAF company group photo"
           class="aspect-[5/2] w-full object-cover xl:rounded-3xl"
         />
       </section>

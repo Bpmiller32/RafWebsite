@@ -15,6 +15,22 @@ const navigation = [
 ];
 
 const mobileMenuOpen = ref(false);
+
+const title = ref("RAF Technology");
+const description = ref("A global leader in pattern recognition");
+
+useHead({
+  title,
+  meta: [
+    {
+      name: "description",
+      content: description,
+    },
+  ],
+  htmlAttrs: {
+    lang: "en",
+  },
+});
 </script>
 
 <template>
@@ -38,11 +54,10 @@ const mobileMenuOpen = ref(false);
     >
       <!-- Company Logo -->
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
+        <div class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
-          <NuxtLink class="flex" to="/">
+          <NuxtLink class="flex" to="/" aria-label="Go to home">
             <div class="h-28 w-1"></div>
-            <!-- <img class="h-28 w-auto" src="~/assets/RafLogo.png" alt="" /> -->
             <ClientOnly>
               <Vue3Lottie
                 :animationData="RafLogo"
@@ -51,7 +66,7 @@ const mobileMenuOpen = ref(false);
               />
             </ClientOnly>
           </NuxtLink>
-        </a>
+        </div>
       </div>
 
       <!-- Mobile menu -->
@@ -81,6 +96,7 @@ const mobileMenuOpen = ref(false);
         <NuxtLink
           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/"
+          aria-label="Go to home"
         >
           Home
         </NuxtLink>
@@ -88,6 +104,7 @@ const mobileMenuOpen = ref(false);
         <NuxtLink
           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/solutions"
+          aria-label="Go to solutions"
         >
           Solutions
         </NuxtLink>
@@ -95,6 +112,7 @@ const mobileMenuOpen = ref(false);
         <NuxtLink
           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/partners"
+          aria-label="Go to partners"
         >
           Partners
         </NuxtLink>
@@ -102,6 +120,7 @@ const mobileMenuOpen = ref(false);
         <NuxtLink
           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/whitepapers"
+          aria-label="Go to whitepapers"
         >
           Whitepapers
         </NuxtLink>
@@ -109,6 +128,7 @@ const mobileMenuOpen = ref(false);
         <NuxtLink
           class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hoverFill"
           to="/about"
+          aria-label="Go to about"
         >
           About RAF
         </NuxtLink>
@@ -140,10 +160,19 @@ const mobileMenuOpen = ref(false);
         class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
       >
         <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
+          <NuxtLink
+            @click="mobileMenuOpen = false"
+            to="/"
+            class="-m-1.5 p-1.5"
+            aria-label="Go to home"
+          >
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="~/assets/RafMobileLogo.webp" alt="" />
-          </a>
+            <img
+              class="h-8 w-auto outline-none"
+              src="~/assets/RafMobileLogo.webp"
+              alt="RAF Mobile Logo"
+            />
+          </NuxtLink>
           <button
             type="button"
             class="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -162,6 +191,7 @@ const mobileMenuOpen = ref(false);
                 :to="item.href"
                 @click="mobileMenuOpen = false"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                :aria-label="'Go to ' + item.name"
                 >{{ item.name }}</NuxtLink
               >
             </div>

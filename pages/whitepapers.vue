@@ -70,7 +70,7 @@ const whitepapers = [
           v-motion
           :initial="{ y: 30, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-          :delay="250"
+          :delay="0"
           class="text-lg leading-8 text-gray-600 opacity-0"
         >
           Discover the wealth of knowledge in our product brochures and
@@ -81,9 +81,9 @@ const whitepapers = [
         <!-- Whitepaper links -->
         <div
           v-motion
-          :initial="{ y: 30, opacity: 0 }"
-          :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-          :delay="750"
+          :initial="{ opacity: 0 }"
+          :enter="{ opacity: 1, transition: { duration: 1200 } }"
+          :delay="500"
           role="list"
           class="mt-10 divide-y divide-gray-200 rounded-md border border-gray-200 opacity-0"
         >
@@ -101,9 +101,10 @@ const whitepapers = [
         v-motion
         :initial="{ y: 30, opacity: 0 }"
         :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-        :delay="500"
+        :delay="250"
         :src="useAsset('WhitepaperSpotlight.webp')"
         class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-20 opacity-0"
+        alt="Whitepaper spotlight image"
       />
     </div>
   </main>
