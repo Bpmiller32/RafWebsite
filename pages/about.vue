@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { LinkIcon } from "@heroicons/vue/24/outline";
 import { BuildingOffice2Icon, PhoneIcon } from "@heroicons/vue/24/outline";
 
@@ -33,77 +33,81 @@ const timeline = [
   },
 ];
 
-const stats = [
-  {
-    label: "Mail pieces processed per hour",
-    value: "44 million",
-  },
-  {
-    label: "Using our solutions internationally",
-    value: "20 countries",
-  },
-  { label: "Letters, flats, and parcels categorized", value: "1.98 trillion" },
-];
-
 const people = [
   {
     name: "Dave Reeves",
     role: "Cheif Executive Officer",
-    imageUrl: "DaveAbout.jpg",
-    bio: "A proven corporate executive with over 20 years experience in the technology industry. Dave has been an executive or adviser in transactions totaling in excess of $500 million and has a successful track record of leading technology businesses. Prior to being appointed CEO, Dave joined RAF as the Chief Financial Officer in November 2004. Previously Dave served as the CFO of Mindplay LLC, the leading provider of table management systems for the gaming industy. Mindplay was acquired in 2004 by Bally Gaming. Dave joined Mindplay from Wavtrace Inc., a broadband telecommunications equipment manufacturer, where he was the CFO and successfully negotiated a strategic partnering transaction, investment from and sale to Harris Corporation. He has a broad base of leadership, financial, accounting and administrative experience including capital raising, system implementation and financial reporting. Dave holds a B.A. in quantitative economics from Stanford University.",
-    twitterUrl: "#",
+    image: "DaveAbout.jpg",
     linkedinUrl: "https://www.linkedin.com/in/dave-reeves-2a854",
+    description1:
+      "Dave is a proven corporate executive with over 20 years of experience in the technology industry. He has a remarkable track record, having served as an executive or advisor in transactions totaling over $500 million, showcasing his exceptional leadership skills in successfully growing and leading technology businesses.",
+    description2:
+      "Prior to being appointed CEO, Dave joined RAF as the Chief Financial Officer in November 2004. He previously served as the CFO of Mindplay LLC (now part of Bally Gaming) and as CFO for Wavetrace where he successfully negotiated a strategic partnering transaction between Wavetrace and Harris Corporation.",
+    description3:
+      "Dave possesses a diverse skill set encompassing leadership, financial management, accounting, and administration. His expertise includes capital raising, system implementation, and financial reporting, showcasing a well-rounded background that contributes to his ability to excel in various areas of business management.",
   },
   {
     name: "William Brandt",
     role: "Vice President of Buisiness Development",
-    imageUrl: "BillAbout.jpg",
-    twitterUrl: "#",
-    linkedinUrl: "#",
+    image: "BillAbout.jpg",
+    linkedinUrl: "",
+    description1:
+      "Accountable for cultivating key business relationships and maintaining strategic alliances with RAF's partners in both the commercial and government sectors, Bill ensures the success and growth of the organization.",
+    description2:
+      "He empowers partners with technology solutions that distinguish their products and services from the competition, driving innovation and excellence in their offerings.",
+    description3:
+      "Bill was previously a 10-year veteran at the United States Postal Service - initially recruited to a two-year multi functional engineering and management development program, he held numerous positions in the field and at headquarters in operations, finance and marketing.",
   },
   {
     name: "George Harbachuk",
     role: "Vice President of Marketing",
-    imageUrl: "GeorgeAbout.jpg",
-    twitterUrl: "#",
+    image: "GeorgeAbout.jpg",
     linkedinUrl: "https://www.linkedin.com/in/george-harbachuk-1ab9964",
+    description1:
+      "With a remarkable 34-year track record in technology development and systems integration, coupled with a broad domestic and international business background in hardware and software system management solutions, George brings unparalleled expertise and experience to every project we undertake.",
+    description2:
+      "Prior to joining RAF Technology, he held several Senior Management positions in Business Relations and Professional Services at Bally Gaming and Harris Corporation where George was responsible for all aspects of product lifecycle including strategy, pricing, promotion, product performance tracking, evaluation and service.",
+    description3: "",
   },
   {
     name: "Christopher Traina",
     role: "Director of Engineering",
-    imageUrl: "ChrisAbout.jpg",
-    twitterUrl: "#",
+    image: "ChrisAbout.jpg",
     linkedinUrl: "https://www.linkedin.com/in/chris-traina-08070324",
+    description1:
+      "With a rich history spanning two decades, Chris has honed expertise in designing and implementing pattern recognition systems. He previously managed the Technical Services department and was responsible for overseeing RAF’s technical support, professional services, and training activities.",
+    description2:
+      "Chris also directed RAF’s Project Management team, including implementing and improving software development and release processes.",
+    description3: "",
   },
-  // More people...
 ];
-
-function useAsset(path) {
-  const assets = import.meta.glob("~/assets/**/*", {
-    eager: true,
-    import: "default",
-  });
-  // @ts-expect-error: wrong type info
-  return assets["/assets/" + path];
-}
 </script>
 
 <template>
-  <main
-    v-motion
-    :initial="{ y: 30, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-    :delay="0"
-    class="mt-48 opacity-0"
-  >
+  <main class="mt-48">
     <!-- Content section -->
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <section class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <!-- Company overview -->
+        <h2
+          v-motion
+          :initial="{ y: 30, opacity: 0 }"
+          :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+          :delay="250"
+          class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl opacity-0"
+        >
           Company overview
         </h2>
+
+        <!-- Company overview description -->
         <div class="mt-6 flex flex-col gap-x-8 gap-y-20 lg:flex-row">
-          <div class="lg:w-full lg:max-w-2xl lg:flex-auto">
+          <div
+            v-motion
+            :initial="{ y: 30, opacity: 0 }"
+            :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+            :delay="250"
+            class="lg:w-full lg:max-w-2xl lg:flex-auto opacity-0"
+          >
             <p class="text-xl leading-8 text-gray-600">
               RAF Technology provides the most advanced optical character
               recognition products for extracting data from different fonts &
@@ -141,78 +145,114 @@ function useAsset(path) {
               </p>
             </div>
           </div>
+
+          <!-- Stats -->
           <div class="lg:flex lg:flex-auto lg:justify-center">
             <dl class="w-64 space-y-8 xl:w-80">
               <div
-                v-for="stat in stats"
-                :key="stat.label"
-                class="flex flex-col-reverse gap-y-4"
+                v-motion
+                :initial="{ y: 50, opacity: 0 }"
+                :enter="{ y: 0, opacity: 1, transition: { duration: 1000 } }"
+                :delay="200"
+                class="flex flex-col-reverse gap-y-4 opacity-0"
               >
                 <dt class="text-base leading-7 text-gray-600">
-                  {{ stat.label }}
+                  Mail pieces processed per hour
                 </dt>
                 <dd class="text-5xl font-semibold tracking-tight text-gray-900">
-                  {{ stat.value }}
+                  44 million
                 </dd>
               </div>
 
               <div
-                class="clip aspect-square overflow-hidden flex flex-col justify-center"
-              ></div>
+                v-motion
+                :initial="{ y: 50, opacity: 0 }"
+                :enter="{ y: 0, opacity: 1, transition: { duration: 1000 } }"
+                :delay="400"
+                class="flex flex-col-reverse gap-y-4 opacity-0"
+              >
+                <dt class="text-base leading-7 text-gray-600">
+                  Using our solutions internationally
+                </dt>
+                <dd class="text-5xl font-semibold tracking-tight text-gray-900">
+                  20 countries
+                </dd>
+              </div>
+
+              <div
+                v-motion
+                :initial="{ y: 50, opacity: 0 }"
+                :enter="{ y: 0, opacity: 1, transition: { duration: 1000 } }"
+                :delay="600"
+                class="flex flex-col-reverse gap-y-4 opacity-0"
+              >
+                <dt class="text-base leading-7 text-gray-600">
+                  Letters, flats, and parcels categorized
+                </dt>
+                <dd class="text-5xl font-semibold tracking-tight text-gray-900">
+                  1.98 trillion
+                </dd>
+              </div>
             </dl>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Timeline section -->
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div
-        class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4"
-      >
-        <div v-for="item in timeline" :key="item.name">
-          <time
-            :datetime="item.dateTime"
-            class="flex items-center text-sm font-semibold leading-6 text-green-600"
-          >
-            <svg
-              viewBox="0 0 4 4"
-              class="mr-4 h-1 w-1 flex-none"
-              aria-hidden="true"
+    <div
+      v-motion
+      :initial="{ y: 30, opacity: 0 }"
+      :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
+      :delay="0"
+      class="opacity-0"
+    >
+      <!-- Timeline section -->
+      <section class="mt-32 mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4"
+        >
+          <div v-for="item in timeline" :key="item.name">
+            <time
+              :datetime="item.dateTime"
+              class="flex items-center text-sm font-semibold leading-6 text-green-600"
             >
-              <circle cx="2" cy="2" r="2" fill="currentColor" />
-            </svg>
-            {{ item.date }}
-            <div
-              class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
-              aria-hidden="true"
-            />
-          </time>
-          <p
-            class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900"
-          >
-            {{ item.name }}
-          </p>
-          <p class="mt-1 text-base leading-7 text-gray-600">
-            {{ item.description }}
-          </p>
+              <svg
+                viewBox="0 0 4 4"
+                class="mr-4 h-1 w-1 flex-none"
+                aria-hidden="true"
+              >
+                <circle cx="2" cy="2" r="2" fill="currentColor" />
+              </svg>
+              {{ item.date }}
+              <div
+                class="absolute -ml-2 h-px w-screen -translate-x-full bg-gray-900/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0"
+                aria-hidden="true"
+              />
+            </time>
+            <p
+              class="mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900"
+            >
+              {{ item.name }}
+            </p>
+            <p class="mt-1 text-base leading-7 text-gray-600">
+              {{ item.description }}
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Image section -->
-    <div class="mt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
-      <img
-        :src="useAsset('GroupPhoto.webp')"
-        alt=""
-        class="aspect-[5/2] w-full object-cover xl:rounded-3xl"
-      />
-    </div>
+      <!-- Image section -->
+      <section class="mt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
+        <img
+          :src="useAsset('GroupPhoto.webp')"
+          alt=""
+          class="aspect-[5/2] w-full object-cover xl:rounded-3xl"
+        />
+      </section>
 
-    <!-- Team section -->
-    <div class="mt-32">
-      <div
-        class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5"
+      <!-- Team section -->
+      <section
+        class="mt-32 mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5"
       >
         <div class="max-w-2xl xl:col-span-2">
           <h2
@@ -225,234 +265,88 @@ function useAsset(path) {
             we do and dedicated to delivering the best results for our clients.
           </p>
         </div>
-        <div
-          role="list"
-          class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3"
-        >
-          <AboutCard :person="people[0]">
-            <p>
-              Dave is a proven corporate executive with over 20 years of
-              experience in the technology industry. He has a remarkable track
-              record, having served as an executive or advisor in transactions
-              totaling over $500 million, showcasing his exceptional leadership
-              skills in successfully growing and leading technology businesses.
-            </p>
-            <p class="mt-4">
-              Prior to being appointed CEO, Dave joined RAF as the Chief
-              Financial Officer in November 2004. He previously served as the
-              CFO of Mindplay LLC (now part of Bally Gaming) and as CFO for
-              Wavetrace where he successfully negotiated a strategic partnering
-              transaction between Wavetrace and Harris Corporation.
-            </p>
-            <p class="mt-4">
-              Dave possesses a diverse skill set encompassing leadership,
-              financial management, accounting, and administration. His
-              expertise includes capital raising, system implementation, and
-              financial reporting, showcasing a well-rounded background that
-              contributes to his ability to excel in various areas of business
-              management.
-            </p></AboutCard
-          >
-
-          <AboutCard :person="people[1]">
-            <p>
-              Accountable for cultivating key business relationships and
-              maintaining strategic alliances with RAF's partners in both the
-              commercial and government sectors, Bill ensures the success and
-              growth of the organization.
-            </p>
-            <p class="mt-4">
-              He empowers partners with technology solutions that distinguish
-              their products and services from the competition, driving
-              innovation and excellence in their offerings.
-            </p>
-            <p class="mt-4">
-              Bill was previously a 10-year veteran at the United States Postal
-              Service - initially recruited to a two-year multi functional
-              engineering and management development program, he held numerous
-              positions in the field and at headquarters in operations, finance
-              and marketing.
-            </p>
-          </AboutCard>
-
-          <AboutCard :person="people[2]">
-            <p>
-              With a remarkable 34-year track record in technology development
-              and systems integration, coupled with a broad domestic and
-              international business background in hardware and software system
-              management solutions, George brings unparalleled expertise and
-              experience to every project we undertake.
-            </p>
-            <p class="mt-4">
-              Prior to joining RAF Technology, he held several Senior Management
-              positions in Business Relations and Professional Services at Bally
-              Gaming and Harris Corporation where George was responsible for all
-              aspects of product lifecycle including strategy, pricing,
-              promotion, product performance tracking, evaluation and service.
-            </p>
-          </AboutCard>
-
-          <AboutCard :person="people[3]">
-            <p>
-              With a rich history spanning two decades, Chris has honed
-              expertise in designing and implementing pattern recognition
-              systems. He previously managed the Technical Services department
-              and was responsible for overseeing RAF’s technical support,
-              professional services, and training activities.
-            </p>
-            <p class="mt-4">
-              Chris also directed RAF’s Project Management team, including
-              implementing and improving software development and release
-              processes.
-            </p>
-          </AboutCard>
+        <div class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
+          <AboutSection v-for="person in people" :person="person" />
         </div>
-      </div>
+      </section>
+
+      <!-- Contact section -->
+      <section id="contactSection" class="mt-32 mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none"
+        >
+          <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
+            <!-- Description section -->
+            <div>
+              <h2 class="text-3xl font-bold tracking-tight text-gray-900">
+                Get in touch
+              </h2>
+              <p class="mt-4 leading-7 text-gray-600">
+                Have questions or need further information? Contact us now to
+                speak with our knowledgeable team and discover how our expertise
+                can benefit you.
+              </p>
+
+              <dl class="mt-6 space-y-4 text-base leading-7 text-gray-600">
+                <div class="flex gap-x-4">
+                  <dt class="flex-none">
+                    <span class="sr-only">Address</span>
+                    <BuildingOffice2Icon
+                      class="h-7 w-6 text-gray-400"
+                      aria-hidden="true"
+                    />
+                  </dt>
+                  <dd>
+                    18211 NE 68th Street<br />
+                    Suite E120<br />
+                    Redmond, WA 98052<br />
+                  </dd>
+                </div>
+                <div class="flex gap-x-4">
+                  <dt class="flex-none">
+                    <span class="sr-only">Telephone</span>
+                    <PhoneIcon
+                      class="h-7 w-6 text-gray-400"
+                      aria-hidden="true"
+                    />
+                  </dt>
+                  <dd>
+                    <a class="hover:text-gray-900" href="tel:+1 (555) 234-5678"
+                      >+1 (425) 867-0700</a
+                    >
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <!-- Contact cards -->
+            <div
+              class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8"
+            >
+              <ContactCard
+                title="Sales Information"
+                email="sales@raf.com"
+                phone="+1 (202) 246-7850"
+              />
+              <ContactCard
+                title="Product and Service Information"
+                email="info@raf.com"
+                phone="+1 (425) 749-2520"
+              />
+              <ContactCard
+                title="Technical Support"
+                email="support@raf.com"
+                phone="+1 (425) 867-0700 ext. 2123286"
+              />
+              <ContactCard
+                title="Join our Team"
+                email="jobs@raf.com"
+                phone="+1 (425) 867-0700 ext. 2127342"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
-
-  <!-- Contact section -->
-  <div
-    v-motion
-    :initial="{ y: 30, opacity: 0 }"
-    :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
-    :delay="0"
-    id="contactSection"
-    class="mt-32"
-  >
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div
-        class="mx-auto max-w-2xl space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none"
-      >
-        <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
-          <div>
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900">
-              Get in touch
-            </h2>
-            <p class="mt-4 leading-7 text-gray-600">
-              Have questions or need further information? Contact us now to
-              speak with our knowledgeable team and discover how our expertise
-              can benefit you.
-            </p>
-
-            <dl class="mt-6 space-y-4 text-base leading-7 text-gray-600">
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Address</span>
-                  <BuildingOffice2Icon
-                    class="h-7 w-6 text-gray-400"
-                    aria-hidden="true"
-                  />
-                </dt>
-                <dd>
-                  18211 NE 68th Street<br />
-                  Suite E120<br />
-                  Redmond, WA 98052<br />
-                </dd>
-              </div>
-              <div class="flex gap-x-4">
-                <dt class="flex-none">
-                  <span class="sr-only">Telephone</span>
-                  <PhoneIcon class="h-7 w-6 text-gray-400" aria-hidden="true" />
-                </dt>
-                <dd>
-                  <a class="hover:text-gray-900" href="tel:+1 (555) 234-5678"
-                    >+1 (425) 867-0700</a
-                  >
-                </dd>
-              </div>
-            </dl>
-          </div>
-          <div
-            class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8"
-          >
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">
-                Sales Information
-              </h3>
-              <dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600">
-                <div>
-                  <dt class="sr-only">Email</dt>
-                  <dd>
-                    <a
-                      class="font-semibold text-green-600"
-                      href="mailto:collaborate@example.com"
-                      >sales@raf.com</a
-                    >
-                  </dd>
-                </div>
-                <div class="mt-1">
-                  <dt class="sr-only">Phone number</dt>
-                  <dd>+1 (202) 246-7850</dd>
-                </div>
-              </dl>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">
-                Product and Service Information
-              </h3>
-              <dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600">
-                <div>
-                  <dt class="sr-only">Email</dt>
-                  <dd>
-                    <a
-                      class="font-semibold text-green-600"
-                      href="mailto:press@example.com"
-                      >info@raf.com</a
-                    >
-                  </dd>
-                </div>
-                <div class="mt-1">
-                  <dt class="sr-only">Phone number</dt>
-                  <dd>+1 (425) 749-2520</dd>
-                </div>
-              </dl>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">
-                Technical Support
-              </h3>
-              <dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600">
-                <div>
-                  <dt class="sr-only">Email</dt>
-                  <dd>
-                    <a
-                      class="font-semibold text-green-600"
-                      href="mailto:careers@example.com"
-                      >support@raf.com</a
-                    >
-                  </dd>
-                </div>
-                <div class="mt-1">
-                  <dt class="sr-only">Phone number</dt>
-                  <dd>+1 (425) 867-0700 ext. 2123286</dd>
-                </div>
-              </dl>
-            </div>
-            <div class="rounded-2xl bg-gray-50 p-10">
-              <h3 class="text-base font-semibold leading-7 text-gray-900">
-                Join our Team
-              </h3>
-              <dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600">
-                <div>
-                  <dt class="sr-only">Email</dt>
-                  <dd>
-                    <a
-                      class="font-semibold text-green-600"
-                      href="mailto:hello@example.com"
-                      >jobs@raf.com</a
-                    >
-                  </dd>
-                </div>
-                <div class="mt-1">
-                  <dt class="sr-only">Phone number</dt>
-                  <dd>+1 (425) 867-0700 ext. 2127342</dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>

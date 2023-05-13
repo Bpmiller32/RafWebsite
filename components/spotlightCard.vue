@@ -2,8 +2,9 @@
 const props = defineProps(["image", "link", "delay"]);
 
 const { width } = useWindowSize();
-
 const anmiationEnabled = ref();
+const imageRef = ref(null);
+const styleRef = ref("");
 
 onMounted(() => {
   if (width.value > 1038) {
@@ -24,13 +25,12 @@ watch(
   }
 );
 
-const imageRef = ref(null);
-const styleRef = ref("");
-
+// Apply effect after 2s to not conflict with transition animation
 useTimeoutFn(() => {
   styleRef.value = "transform 0.25s ease-out";
 }, 2000);
 
+// Rotational effect
 const { elementX, elementY, isOutside, elementHeight, elementWidth } =
   useMouseInElement(imageRef);
 
@@ -53,15 +53,6 @@ const imageTransform = computed(() => {
     return `perspective(${elementWidth.value}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   }
 });
-
-function useAsset(path: string): string {
-  const assets = import.meta.glob("~/assets/**/*", {
-    eager: true,
-    import: "default",
-  });
-  // @ts-expect-error: wrong type info
-  return assets["/assets/" + path];
-}
 </script>
 
 <template>

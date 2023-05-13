@@ -10,7 +10,6 @@ const partners = [
     websiteName: "bluecrestinc.com",
     websiteUrl: "https://www.bluecrestinc.com",
     linkedInUrl: "https://www.linkedin.com/company/bluecrest/",
-    twitterUrl: "https://twitter.com/BCrestinc",
   },
 
   {
@@ -21,7 +20,6 @@ const partners = [
     websiteName: "NPISorters.com",
     websiteUrl: "http://www.npisorters.com/",
     linkedInUrl: "https://www.linkedin.com/company/npi_2",
-    twitterUrl: "",
   },
 
   {
@@ -32,7 +30,6 @@ const partners = [
     websiteName: "EII-Online.com",
     websiteUrl: "https://www.eii-online.com/",
     linkedInUrl: "https://www.linkedin.com/company/engineering-innovation",
-    twitterUrl: "",
   },
 
   {
@@ -43,7 +40,6 @@ const partners = [
     websiteName: "SolutionNetSystems.com",
     websiteUrl: "https://solutionnetsystems.com/",
     linkedInUrl: "https://www.linkedin.com/company/solution-net-systems-llc",
-    twitterUrl: "",
   },
 
   {
@@ -54,7 +50,6 @@ const partners = [
     websiteName: "Datalogic.com",
     websiteUrl: "https://www.datalogic.com/",
     linkedInUrl: "https://www.linkedin.com/company/datalogic",
-    twitterUrl: "",
   },
 
   {
@@ -65,7 +60,6 @@ const partners = [
     websiteName: "NuminaGroup.com",
     websiteUrl: "https://numinagroup.com",
     linkedInUrl: "https://www.linkedin.com/company/the-numina-group",
-    twitterUrl: "",
   },
 
   {
@@ -76,7 +70,6 @@ const partners = [
     websiteName: "Honeywell.com",
     websiteUrl: "https://www.honeywell.com/us/en",
     linkedInUrl: "https://www.linkedin.com/company/honeywell",
-    twitterUrl: "",
   },
 
   {
@@ -87,7 +80,6 @@ const partners = [
     websiteName: "Zebra.com",
     websiteUrl: "https://www.zebra.com/us/en.html",
     linkedInUrl: "https://www.linkedin.com/company/zebra-technologies",
-    twitterUrl: "",
   },
 
   {
@@ -98,7 +90,6 @@ const partners = [
     websiteName: "Parascript.com",
     websiteUrl: "https://www.parascript.com",
     linkedInUrl: "https://www.linkedin.com/company/parascript",
-    twitterUrl: "",
   },
 
   {
@@ -109,24 +100,15 @@ const partners = [
     websiteName: "GlobalDataConsortium.com",
     websiteUrl: "https://www.globaldataconsortium.com",
     linkedInUrl: "https://www.linkedin.com/company/global-data-consortium",
-    twitterUrl: "",
   },
 ];
-
-function useAsset(path: string): string {
-  const assets = import.meta.glob("~/assets/**/*", {
-    eager: true,
-    import: "default",
-  });
-  // @ts-expect-error: wrong type info
-  return assets["/assets/" + path];
-}
 </script>
 
 <template>
   <!-- Logo cloud -->
   <div class="mt-32 sm:mt-48">
     <div class="mx-auto max-w-7xl px-6 mt-48 sm:mt-0 lg:px-8">
+      <!-- Heading -->
       <h2
         v-motion
         :initial="{ y: 30, opacity: 0 }"
@@ -136,6 +118,8 @@ function useAsset(path: string): string {
       >
         Trusted by the world’s most innovative teams
       </h2>
+
+      <!-- Logos -->
       <TabGroup>
         <TabList
           v-motion

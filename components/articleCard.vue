@@ -16,6 +16,12 @@ const props = defineProps([
 const open = ref(false);
 const imageRef = ref(null);
 
+// Dialog control
+function OpenDialog() {
+  open.value = !open.value;
+}
+
+// Rotational effect
 const { elementX, elementY, isOutside, elementHeight, elementWidth } =
   useMouseInElement(imageRef);
 
@@ -38,19 +44,6 @@ const imageTransform = computed(() => {
     return `perspective(${elementWidth.value}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   }
 });
-
-function OpenDialog() {
-  open.value = !open.value;
-}
-
-function useAsset(path: string): string {
-  const assets = import.meta.glob("~/assets/**/*", {
-    eager: true,
-    import: "default",
-  });
-  // @ts-expect-error: wrong type info
-  return assets["/assets/" + path];
-}
 </script>
 
 <template>

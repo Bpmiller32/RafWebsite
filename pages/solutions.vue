@@ -19,6 +19,7 @@ function useAsset(path: string): string {
     :delay="0"
     class="opacity-0"
   >
+    <!-- Featured solution -->
     <div
       id="ParcelVisionSolution"
       class="mt-32 pb-16 pt-24 sm:pb-24 sm:pt-32 xl:pb-32"
@@ -242,42 +243,6 @@ function useAsset(path: string): string {
                 </p>
               </div>
             </div>
-            <!-- <dl
-              class="mt-10 grid grid-cols-2 gap-8 border-t border-gray-900/10 pt-10 sm:grid-cols-4"
-            >
-              <div>
-                <dt class="text-sm font-semibold leading-6 text-gray-600">
-                  Stat Label
-                </dt>
-                <dd
-                  class="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-900"
-                >
-                  100
-                </dd>
-              </div>
-
-              <div>
-                <dt class="text-sm font-semibold leading-6 text-gray-600">
-                  Stat Label
-                </dt>
-                <dd
-                  class="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-900"
-                >
-                  100
-                </dd>
-              </div>
-
-              <div>
-                <dt class="text-sm font-semibold leading-6 text-gray-600">
-                  Stat Label
-                </dt>
-                <dd
-                  class="mt-2 text-3xl font-bold leading-10 tracking-tight text-gray-900"
-                >
-                  100
-                </dd>
-              </div>
-            </dl> -->
             <div class="mt-10 flex">
               <a
                 href="https://storage.googleapis.com/bpmillerwebsitestorage/SmartScriptProductSheet.pdf"
@@ -328,7 +293,7 @@ function useAsset(path: string): string {
               </div>
             </div>
 
-            <div class="mt-10 flex">
+            <div class="mt-10">
               <a
                 href="https://storage.googleapis.com/bpmillerwebsitestorage/SmartMatchProductSheet.pdf"
                 class="text-base font-semibold leading-7 text-green-600"

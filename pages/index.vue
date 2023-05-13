@@ -43,15 +43,6 @@ const posts = [
     hover: "#6b7280",
   },
 ];
-
-function useAsset(path) {
-  const assets = import.meta.glob("~/assets/**/*", {
-    eager: true,
-    import: "default",
-  });
-  // @ts-expect-error: wrong type info
-  return assets["/assets/" + path];
-}
 </script>
 
 <template>
@@ -144,7 +135,7 @@ function useAsset(path) {
     </div>
   </div>
 
-  <!-- Workaround, look into Vue teleport -->
+  <!-- Workaround for Spotlight images positioning on mobile, look into Vue teleport -->
   <div class="min-[1038px]:hidden flex justify-center">
     <div
       class="mt-14 min-[360px]:flex justify-end gap-2 min-[370px]:gap-8 sm:justify-start sm:pl-20 lg:mt-7 lg:pl-0"

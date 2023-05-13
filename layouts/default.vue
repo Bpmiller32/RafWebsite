@@ -31,6 +31,7 @@ const mobileMenuOpen = ref(false);
       class="bg-white max-h-40 hidden sm:block absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] sm:-mr-80 lg:-mr-96"
     />
 
+    <!-- Navigation menu -->
     <nav
       class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       aria-label="Global"
@@ -189,6 +190,7 @@ const mobileMenuOpen = ref(false);
   <!-- Page content -->
   <slot></slot>
 
+  <!-- Footer with copyright -->
   <footer class="mx-auto flex max-w-7xl">
     <div
       class="mt-16 w-full border-t border-gray-900/10 p-8 md:flex md:items-center md:justify-between"
