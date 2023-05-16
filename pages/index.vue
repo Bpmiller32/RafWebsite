@@ -151,7 +151,7 @@ const posts = [
         />
         <SpotlightCard
           :delay="0"
-          image="ParcelVisionFeature2.webp"
+          image="ParcelVisionFeature.webp"
           link="#ParcelVisionSolution"
         />
       </div>
