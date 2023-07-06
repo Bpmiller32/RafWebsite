@@ -38,7 +38,7 @@
                 class="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9"
               >
                 <p>
-                  Advanced neural network algorithms decoding all actionable
+                  Advanced neural network algorithms that decode all actionable
                   data - regardless of form style or country.
                 </p>
               </blockquote>
@@ -181,10 +181,7 @@
                     As a result, no product on the market today can match
                     SmartScript’s extraordinarily high read rate performance
                     with the lowest error rates and do so in timeframes never
-                    seen before. SmartScript also sets a new benchmark in
-                    performance by detecting names and building unit numbers so
-                    both full address reading as well as move updates can also
-                    take place.
+                    seen before.
                   </p>
                   <div class="mt-8">
                     <p class="text-xl font-bold tracking-tight text-gray-900">
@@ -195,7 +192,7 @@
                       message="Utilizes state-of-the-art neural network technology"
                     />
                     <SolutionBulletpoint
-                      message="Delivers the industries highest handwriting recognition rates"
+                      message="Delivers the industry’s highest handwriting recognition rates"
                     />
                     <SolutionBulletpoint
                       message="Eliminates unwanted character noise which reduces errors"
@@ -213,12 +210,12 @@
                 </div>
               </div>
               <div class="mt-10 flex">
-                <a
+                <!-- <a
                   href="https://ewr1.vultrobjects.com/raf-website/SmartScript%20Product%20Sheet.pdf"
                   class="text-base font-semibold leading-7 text-green-600"
                   >Learn more about SmartScript
                   <span aria-hidden="true">&rarr;</span></a
-                >
+                > -->
               </div>
             </div>
           </div>
@@ -378,7 +375,7 @@
                       message="Address Block Locator: Quickly and accurately finds address even on envelope with multiple paragraphs"
                     />
                     <SolutionBulletpoint
-                      message="Universal Font Reader: RAF’s distinctive approach to character recognition enables the reading of never before seen fonts"
+                      message="Universal Font Reader: RAF’s distinctive approach to character recognition enables the reading of never-before-seen fonts"
                     />
                     <SolutionBulletpoint
                       message="Intuitive user Interface: Easy to use interface minimizing clicks for rapid configuration changes and reports."

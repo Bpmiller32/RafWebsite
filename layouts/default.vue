@@ -226,7 +226,7 @@ useHead({
       class="mt-16 w-full border-t border-gray-900/10 p-8 md:flex md:items-center md:justify-between"
     >
       <p class="text-xs leading-5 text-gray-500 md:order-1">
-        &copy; {{ year }} RAF Technology, Inc. A Matthews International Comapny.
+        &copy; {{ year }} RAF Technology, Inc. A Matthews International Company.
         All rights reserved.
       </p>
     </div>

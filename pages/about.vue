@@ -18,7 +18,7 @@ const timeline = [
     dateTime: "2021-12",
   },
   {
-    name: "Aquired by Matthews",
+    name: "Acquired by Matthews",
     description:
       "This exciting new partnership brings together our innovative solutions with their extensive resources and expertise, propelling us to new heights of success and unlocking unparalleled opportunities for our customers.",
     date: "January 2017",
@@ -48,7 +48,7 @@ const people = [
   },
   {
     name: "William Brandt",
-    role: "Vice President of Buisiness Development",
+    role: "Vice President of Business Development",
     image: "BillAbout.jpg",
     linkedinUrl: "",
     description1:
@@ -56,7 +56,7 @@ const people = [
     description2:
       "He empowers partners with technology solutions that distinguish their products and services from the competition, driving innovation and excellence in their offerings.",
     description3:
-      "Bill was previously a 10-year veteran at the United States Postal Service - initially recruited to a two-year multi functional engineering and management development program, he held numerous positions in the field and at headquarters in operations, finance and marketing.",
+      "Bill was previously a 10-year veteran at the United States Postal Service - initially recruited to a two-year multi-functional engineering and management development program, he held numerous positions in the field and at headquarters in operations, finance and marketing.",
   },
   {
     name: "George Harbachuk",
@@ -118,7 +118,7 @@ const people = [
             </p>
             <div class="mt-10 max-w-xl text-base leading-7 text-gray-700">
               <p>
-                Founded in 1989, aquired in 2017, RAF Technology is part of
+                Founded in 1989, acquired in 2017, RAF Technology is part of
                 Matthews Automation Solutions (a Matthews International company,
                 <span class="inline-flex"
                   ><a
@@ -133,7 +133,7 @@ const people = [
                 postal, courier, and transportation companies to read, identify
                 and track items without a barcode or RFID. Our software is used
                 for the sortation and delivery of letters and parcels by
-                national posts and parcel delivery companies in over 20
+                national posts and parcel delivery companies in over 30
                 countries.
               </p>
               <p class="mt-10">
@@ -175,7 +175,7 @@ const people = [
                   Using our solutions internationally
                 </dt>
                 <dd class="text-5xl font-semibold tracking-tight text-gray-900">
-                  20 countries
+                  30 countries
                 </dd>
               </div>
 
