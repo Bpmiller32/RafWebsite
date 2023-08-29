@@ -36,13 +36,13 @@ const timeline = [
 const people = [
   {
     name: "Dave Reeves",
-    role: "Cheif Executive Officer",
+    role: "General Manager",
     image: "DaveAbout.jpg",
     linkedinUrl: "https://www.linkedin.com/in/dave-reeves-2a854",
     description1:
       "Dave is a proven corporate executive with over 20 years of experience in the technology industry. He has a remarkable track record, having served as an executive or advisor in transactions totaling over $500 million, showcasing his exceptional leadership skills in successfully growing and leading technology businesses.",
     description2:
-      "Prior to being appointed CEO, Dave joined RAF as the Chief Financial Officer in November 2004. He previously served as the CFO of Mindplay LLC (now part of Bally Gaming) and as CFO for Wavetrace where he successfully negotiated a strategic partnering transaction between Wavetrace and Harris Corporation.",
+      "Prior to being appointed CEO, Dave joined RAF as the Chief Financial Officer in November 2004. He previously served as the CFO of Mindplay LLC (acquired by Bally Gaming) and as CFO for Wavtrace where he successfully negotiated a strategic partnering transaction between Wavtrace and Harris Corporation.",
     description3:
       "Dave possesses a diverse skill set encompassing leadership, financial management, accounting, and administration. His expertise includes capital raising, system implementation, and financial reporting, showcasing a well-rounded background that contributes to his ability to excel in various areas of business management.",
   },
@@ -58,15 +58,26 @@ const people = [
     description3:
       "Bill was previously a 10-year veteran at the United States Postal Service - initially recruited to a two-year multi-functional engineering and management development program, he held numerous positions in the field and at headquarters in operations, finance and marketing.",
   },
+  // {
+  //   name: "George Harbachuk",
+  //   role: "Vice President of Marketing",
+  //   image: "GeorgeAbout.jpg",
+  //   linkedinUrl: "https://www.linkedin.com/in/george-harbachuk-1ab9964",
+  //   description1:
+  //     "With a remarkable 34-year track record in technology development and systems integration, coupled with a broad domestic and international business background in hardware and software system management solutions, George brings unparalleled expertise and experience to every project we undertake.",
+  //   description2:
+  //     "Prior to joining RAF Technology, he held several Senior Management positions in Business Relations and Professional Services at Bally Gaming and Harris Corporation where George was responsible for all aspects of product lifecycle including strategy, pricing, promotion, product performance tracking, evaluation and service.",
+  //   description3: "",
+  // },
   {
-    name: "George Harbachuk",
-    role: "Vice President of Marketing",
-    image: "GeorgeAbout.jpg",
-    linkedinUrl: "https://www.linkedin.com/in/george-harbachuk-1ab9964",
+    name: "Emily Gibson",
+    role: "Director of Marketing",
+    image: "EmilyAbout.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/egibson5",
     description1:
-      "With a remarkable 34-year track record in technology development and systems integration, coupled with a broad domestic and international business background in hardware and software system management solutions, George brings unparalleled expertise and experience to every project we undertake.",
+      "For more than 25 years, Emily has been leading marketing services for companies in the technology industry. She manages end-to-end marketing for RAF Technology as an organization and clear communications with partners and customers. Her work helps RAF Technology build caring relationships, ensure that RAF’s innovative solutions meet customer needs, and keep RAF’s recognition solutions at the forefront of the parcel automation and materials handling.",
     description2:
-      "Prior to joining RAF Technology, he held several Senior Management positions in Business Relations and Professional Services at Bally Gaming and Harris Corporation where George was responsible for all aspects of product lifecycle including strategy, pricing, promotion, product performance tracking, evaluation and service.",
+      "Prior to RAF Technology, Emily worked at Microsoft and as a marketing director for several technology organizations.",
     description3: "",
   },
   {

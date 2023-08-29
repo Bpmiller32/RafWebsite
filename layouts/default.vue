@@ -141,9 +141,9 @@ useHead({
           :initial="{ y: 10, opacity: 0 }"
           :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
           :delay="0"
-          href="http://matthewsautomation.com/"
+          href="https://www.volarisgroup.com"
           class="opacity-0 text-sm font-semibold leading-6 text-gray-900"
-          >Matthews Automation <span aria-hidden="true">&rarr;</span></a
+          >Home | Volaris Group <span aria-hidden="true">&rarr;</span></a
         >
       </div>
     </nav>
@@ -197,9 +197,9 @@ useHead({
             </div>
             <div class="py-6">
               <a
-                href="http://matthewsautomation.com/"
+                href="https://www.volarisgroup.com"
                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >Matthews Automation</a
+                >Volaris Group</a
               >
             </div>
           </div>
@@ -226,8 +226,8 @@ useHead({
       class="mt-16 w-full border-t border-gray-900/10 p-8 md:flex md:items-center md:justify-between"
     >
       <p class="text-xs leading-5 text-gray-500 md:order-1">
-        &copy; {{ year }} RAF Technology, Inc. A Matthews International Company.
-        All rights reserved.
+        &copy; {{ year }} RAF Technology, Inc. A VolarisGroup Company. All
+        rights reserved.
       </p>
     </div>
     <div></div>
