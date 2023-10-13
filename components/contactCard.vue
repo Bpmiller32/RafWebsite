@@ -5,7 +5,7 @@ const props = defineProps(["title", "email", "phone"]);
 <template>
   <div class="rounded-2xl bg-gray-50 p-10">
     <h3 class="text-base font-semibold leading-7 text-gray-900">
-      Sales Information
+      {{ props.title }}
     </h3>
     <dl class="mt-3 space-y-1 text-sm leading-6 text-gray-600">
       <div>

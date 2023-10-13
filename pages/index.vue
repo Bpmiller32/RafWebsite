@@ -1,20 +1,6 @@
 <script setup>
 const posts = [
   {
-    title: "Argosy Post 5.0 Official Release",
-    date: "April 28, 2023",
-    image: "ArgosyPostArticle.webp",
-    category: "Solutions",
-    author: {
-      name: "Bob Randall",
-      role: "Program Manager",
-      image: "BobProfile.webp",
-    },
-    description:
-      "Introducing the Next Generation of OCR Technology:\n\n\nRAF is thrilled to announce the release of the newest version of our flagship OCR software. Packed with cutting-edge features and advancements, Argosy Post 5.0 is ready to revolutionize the way you process letters, flats, and parcels.\n\nNew featues include:\n\n✉️ USPS CASS Cycle-O Directories\nSmart Match in this release is CASS certified for USPS Cycle O.\n\n🖥️Simplified Argosy Main Installer\nInstallation type can be 'US Outgoing', 'International/Incoming', or both. Directory or recognition components are installed based on the choice.\n\n📊Additional Statistics\nMore statistics captured and added, stat file columns are reimagined for better readability\n\n🔍Improved Recognition\nImproved OCR algorithms that enhance the accuracy and speed of the software\n\n🖋️RAF Handwriting\nRAF Smart Script now available for US addresses.",
-    hover: "#6b7280",
-  },
-  {
     title: "Promat 2023",
     date: "Mar 6, 2023",
     image: "PromatLogo.webp",
@@ -29,17 +15,31 @@ const posts = [
     hover: "#6b7280",
   },
   {
-    title: "Update on Cycle O",
-    date: "February 2, 2023",
-    image: "UspsArticle.webp",
-    category: "News",
+    title: "Argosy Post 5.0 Official Release",
+    date: "April 28, 2023",
+    image: "ArgosyPostArticle.webp",
+    category: "Solutions",
     author: {
-      name: "Billy Miller",
-      role: "Techservices Manager",
-      image: "BillyProfile.webp",
+      name: "Bob Randall",
+      role: "Program Manager",
+      image: "BobProfile.webp",
     },
     description:
-      "The USPS recently held an update meeting on the CASS Cycle O processing cycle, which is set to begin on July 1st, 2023.\n\nCycle O will implement changes to the processing cycle that will enable the USPS to better validate and standardize addresses, resulting in improved accuracy and efficiency in mail delivery. The update will also provide more granular reporting, allowing mailers to better understand their mailing results and improve their address quality over time.\n\nHere is an updated calendar of events for Cycle O from the discussion:\n\n➡️ May 2023: Cycle N Data and Fullfillment Ends\n➡️ July 31st, 2023: Expiration of CASS Cycle N\n➡️ August 1st, 2023: Implementation of CASS Cycle O\n➡️ November 7th, 2023: NCOA Reporting Changes\n\nWe will keep you informed of any future updates we recieve from USPS and as always - please email us at support@raf.com if you have any questions.",
+      "Introducing the Next Generation of OCR Technology:\n\n\nRAF is thrilled to announce the release of the newest version of our flagship OCR software. Packed with cutting-edge features and advancements, Argosy Post 5.0 is ready to revolutionize the way you process letters, flats, and parcels.\n\nNew featues include:\n\n✉️ USPS CASS Cycle-O Directories\nSmart Match in this release is CASS certified for USPS Cycle O.\n\n🖥️Simplified Argosy Main Installer\nInstallation type can be 'US Outgoing', 'International/Incoming', or both. Directory or recognition components are installed based on the choice.\n\n📊Additional Statistics\nMore statistics captured and added, stat file columns are reimagined for better readability\n\n🔍Improved Recognition\nImproved OCR algorithms that enhance the accuracy and speed of the software\n\n🖋️RAF Handwriting\nRAF Smart Script now available for US addresses.",
+    hover: "#6b7280",
+  },
+  {
+    title: "Volaris Acquires RAF Technology",
+    date: "September 5, 2023",
+    image: "VolarisLogo.webp",
+    category: "News",
+    author: {
+      name: "Emily Gibson",
+      role: "Director of Marketing",
+      image: "EmilyProfile.webp",
+    },
+    description:
+      'Toronto, ON – Today Volaris Group announced the acquisition of RAF Technology, a global leader in pattern recognition technology. RAF offers data capture and verification software products that enable postal, courier, and logistics companies to read, identify and track shipping items.\n\n"Enabling the efficient and accurate operation of post and parcel services is a key function of our modern economy and RAF’s technology offers their customers a mission-critical component their operations," said Alice Luo, Chief Strategy Officer at Volaris Group. "Joining Volaris Group provides a stable forever home for RAF’s technology, team and customers."\n\nOver its 25-year history RAF Technology has built a multi-layered and module-oriented set of AI-driven software components, hardware interfaces, and databases that enable advanced optical character recognition products. RAF’s software detects and extracts machine print and handwritten data from mail and parcels. RAF serves both US and global customers that rely on this expertise to deliver mail sorting, parcel logistics, warehouse inventory tracking, and signature verification.\n\n"Joining Volaris positions RAF well for our next chapter. The Volaris investment approach provides our customers and team with stability.We are excited to access Volaris best practices and global community of software leaders as we work to grow," said David Reeves, General Manager of RAF.\n\nRAF will continue to operate independently under the leadership of David Reeves.\n\nAbout Volaris Group\n\nVolaris acquires, strengthens, and grows vertical market technology companies. As an Operating Group of Constellation Software Inc., Volaris is all about strengthening businesses within the markets they compete, enabling them to grow – whether that growth comes through organic measures such as new initiatives and product development, day-to-day business, or through complementary acquisitions. Learn more at www.volarisgroup.com.',
     hover: "#6b7280",
   },
 ];
@@ -54,8 +54,7 @@ const posts = [
       autoplay
       loop
       playsinline
-      :poster="useAsset('IndexBackground.webp')"
-      :src="useAsset('IndexBackground.mp4')"
+      src="~/assets/IndexBackground.mp4"
       class="mt-40 opacity-50 w-screen h-screen max-h-[50rem] object-cover"
     ></video>
 

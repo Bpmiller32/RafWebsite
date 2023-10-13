@@ -142,6 +142,7 @@ useHead({
           :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
           :delay="0"
           href="https://www.volarisgroup.com"
+          target="_blank"
           class="opacity-0 text-sm font-semibold leading-6 text-gray-900"
           >Home | Volaris Group <span aria-hidden="true">&rarr;</span></a
         >
@@ -199,6 +200,7 @@ useHead({
               <a
                 href="https://www.volarisgroup.com"
                 class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                target="_blank"
                 >Volaris Group</a
               >
             </div>
@@ -226,8 +228,8 @@ useHead({
       class="mt-16 w-full border-t border-gray-900/10 p-8 md:flex md:items-center md:justify-between"
     >
       <p class="text-xs leading-5 text-gray-500 md:order-1">
-        &copy; {{ year }} RAF Technology, Inc. A VolarisGroup Company. All
-        rights reserved.
+        &copy; {{ year }} RAF Software Technology, Inc. A Volaris Group Company.
+        All rights reserved.
       </p>
     </div>
     <div></div>

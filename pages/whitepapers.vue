@@ -46,14 +46,9 @@ const whitepapers = [
     stripe: false,
   },
   {
-    title: "Matthews Inbound Receiving Solution",
-    link: "https://ewr1.vultrobjects.com/raf-website/Matthews%20Inbound%20Receiving%20Solution.pdf",
-    stripe: true,
-  },
-  {
     title: "Postal Core Solution",
     link: "https://ewr1.vultrobjects.com/raf-website/Postal%20Core%20Solution.pdf",
-    stripe: false,
+    stripe: true,
   },
 ];
 </script>
@@ -102,7 +97,7 @@ const whitepapers = [
         :initial="{ y: 30, opacity: 0 }"
         :enter="{ y: 0, opacity: 1, transition: { duration: 1200 } }"
         :delay="250"
-        :src="useAsset('WhitepaperSpotlight.webp')"
+        src="~/assets/WhitepaperSpotlight.webp"
         class="mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-20 opacity-0"
         alt="Whitepaper spotlight image"
       />

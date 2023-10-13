@@ -18,17 +18,17 @@ const timeline = [
     dateTime: "2021-12",
   },
   {
-    name: "Acquired by Matthews",
+    name: "Acquired by Volaris Group",
     description:
-      "This exciting new partnership brings together our innovative solutions with their extensive resources and expertise, propelling us to new heights of success and unlocking unparalleled opportunities for our customers.",
-    date: "January 2017",
-    dateTime: "2022-02",
+      "RAF Technology was acquired by Volaris Group which would support us with additional resources and global reach.",
+    date: "September 2023",
+    dateTime: "2023-09",
   },
   {
     name: "Argosy Mobile",
     description:
       "Set to revolutionize the mobile world as we expand Argosy's capabilities to a new platform. Argosy Mobile opens up boundless possibilities for users to seamlessly access and utilize our innovative solution wherever and whenever they need it.",
-    date: "Summer 2023",
+    date: "Fall 2023",
     dateTime: "2022-12",
   },
 ];
@@ -129,23 +129,23 @@ const people = [
             </p>
             <div class="mt-10 max-w-xl text-base leading-7 text-gray-700">
               <p>
-                Founded in 1989, acquired in 2017, RAF Technology is part of
-                Matthews Automation Solutions (a Matthews International company,
+                Founded in 1989, acquired in 2023, RAF Technology was acquired
+                by
                 <span class="inline-flex"
                   ><a
-                    class="text-green-500 flex"
-                    href="https://www.matw.com/investors/stock-data/quote"
+                    class="text-green-500 flex cursor-pointer"
+                    href="https://www.volarisgroup.com"
+                    target="_blank"
                   >
-                    <p>NASDAQ: MATW</p>
+                    <p>Volaris Group</p>
                     <LinkIcon class="h-4" />
                   </a> </span
-                >). We are the global leader in pattern recognition offering
-                data capture and verification software products that enable
-                postal, courier, and transportation companies to read, identify
-                and track items without a barcode or RFID. Our software is used
-                for the sortation and delivery of letters and parcels by
-                national posts and parcel delivery companies in over 30
-                countries.
+                >. We are the global leader in pattern recognition offering data
+                capture and verification software products that enable postal,
+                courier, and transportation companies to read, identify and
+                track items without a barcode or RFID. Our software is used for
+                the sortation and delivery of letters and parcels by national
+                posts and parcel delivery companies in over 30 countries.
               </p>
               <p class="mt-10">
                 We are headquartered in Redmond, Washington and service numerous
@@ -255,7 +255,7 @@ const people = [
       <!-- Image section -->
       <section class="mt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
         <img
-          :src="useAsset('GroupPhoto.webp')"
+          src="~/assets/GroupPhotoBuilding.webp"
           alt="RAF company group photo"
           class="aspect-[5/2] w-full object-cover xl:rounded-3xl"
         />
@@ -340,7 +340,7 @@ const people = [
                 phone="+1 (202) 246-7850"
               />
               <ContactCard
-                title="Product and Service Information"
+                title="General Information"
                 email="info@raf.com"
                 phone="+1 (425) 749-2520"
               />

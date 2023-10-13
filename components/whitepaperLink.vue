@@ -21,6 +21,7 @@ const props = defineProps(["title", "link", "stripe"]);
     <div class="ml-4 flex-shrink-0">
       <a
         :href="props.link"
+        target="_blank"
         class="font-medium text-green-600 hover:text-green-500 duration-500"
         >Download</a
       >
