@@ -2,12 +2,12 @@
 const whitepapers = [
   {
     title: "Argosy Mobile Datasheet",
-    link: "https://ewr1.vultrobjects.com/raf-website/Argosy%20Mobile%20Datasheet.pdf",
+    link: "https://storage.googleapis.com/bpmillerwebsitestorage/ArgosyMobileDatasheet9-23.pdf",
     stripe: false,
   },
   {
     title: "Argosy Post Datasheet",
-    link: "https://ewr1.vultrobjects.com/raf-website/Argosy%20Post%20Datasheet.pdf",
+    link: "https://storage.googleapis.com/bpmillerwebsitestorage/ArgosyPostDatasheet9-23.pdf",
     stripe: true,
   },
   {
@@ -17,7 +17,7 @@ const whitepapers = [
   },
   {
     title: "SmartMatch Datasheet",
-    link: "https://ewr1.vultrobjects.com/raf-website/SmartMatch%20Datasheet.pdf",
+    link: "https://storage.googleapis.com/bpmillerwebsitestorage/SmartMatchDatasheet10-17.pdf",
     stripe: true,
   },
   {
@@ -27,7 +27,7 @@ const whitepapers = [
   },
   {
     title: "SmartScript Product Sheet",
-    link: "https://ewr1.vultrobjects.com/raf-website/SmartScript%20Product%20Sheet.pdf",
+    link: "https://storage.googleapis.com/bpmillerwebsitestorage/SmartScriptDatasheet9-23.pdf",
     stripe: true,
   },
   {
@@ -37,7 +37,7 @@ const whitepapers = [
   },
   {
     title: "Parcel Vision Product Sheet",
-    link: "https://ewr1.vultrobjects.com/raf-website/Parcel%20Vision%20Product%20Sheet.pdf",
+    link: "https://storage.googleapis.com/bpmillerwebsitestorage/ParcelVisionDatasheet9-23.pdf",
     stripe: true,
   },
   {

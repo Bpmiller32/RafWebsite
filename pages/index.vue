@@ -1,20 +1,6 @@
 <script setup>
 const posts = [
   {
-    title: "Promat 2023",
-    date: "Mar 6, 2023",
-    image: "PromatLogo.webp",
-    category: "Marketing",
-    author: {
-      name: "George Harbachuk",
-      role: "VP of Marketing",
-      image: "GeorgeProfile.webp",
-    },
-    description:
-      "As one of the leading expos for material handling, logistics, and supply chain solutions, ProMat 2023 presents an excellent opportunity for us to showcase our latest innovations and technologies to a wide range of industry professionals. Our team is excited to connect with other experts and leaders in the field and to explore new collaborations and partnerships that can help us continue to drive innovation and growth in the industry.\n\nCome visit us a booth S4307!",
-    hover: "#6b7280",
-  },
-  {
     title: "Argosy Post 5.0 Official Release",
     date: "April 28, 2023",
     image: "ArgosyPostArticle.webp",
@@ -40,6 +26,20 @@ const posts = [
     },
     description:
       'Toronto, ON – Today Volaris Group announced the acquisition of RAF Technology, a global leader in pattern recognition technology. RAF offers data capture and verification software products that enable postal, courier, and logistics companies to read, identify and track shipping items.\n\n"Enabling the efficient and accurate operation of post and parcel services is a key function of our modern economy and RAF’s technology offers their customers a mission-critical component their operations," said Alice Luo, Chief Strategy Officer at Volaris Group. "Joining Volaris Group provides a stable forever home for RAF’s technology, team and customers."\n\nOver its 25-year history RAF Technology has built a multi-layered and module-oriented set of AI-driven software components, hardware interfaces, and databases that enable advanced optical character recognition products. RAF’s software detects and extracts machine print and handwritten data from mail and parcels. RAF serves both US and global customers that rely on this expertise to deliver mail sorting, parcel logistics, warehouse inventory tracking, and signature verification.\n\n"Joining Volaris positions RAF well for our next chapter. The Volaris investment approach provides our customers and team with stability.We are excited to access Volaris best practices and global community of software leaders as we work to grow," said David Reeves, General Manager of RAF.\n\nRAF will continue to operate independently under the leadership of David Reeves.\n\nAbout Volaris Group\n\nVolaris acquires, strengthens, and grows vertical market technology companies. As an Operating Group of Constellation Software Inc., Volaris is all about strengthening businesses within the markets they compete, enabling them to grow – whether that growth comes through organic measures such as new initiatives and product development, day-to-day business, or through complementary acquisitions. Learn more at www.volarisgroup.com.',
+    hover: "#6b7280",
+  },
+  {
+    title: "Parcel and Post Expo 2023",
+    date: "October 17, 2023",
+    image: "PostExpo2023.webp",
+    category: "Marketing",
+    author: {
+      name: "Emily Gibson",
+      role: "Director of Marketing",
+      image: "EmilyProfile.webp",
+    },
+    description:
+      "RAF Technology is attending and demonstrating our adaptive intelligence optical character recognition (OCR) software including Argosy Post and Argosy Mobile at this year's Parcel + Post Expo (www.postexpo.com) in Amsterdam Oct 24-26.\n\nWe are excited to be partnering with Alstef Group and BlueCrest to showcase our highly-accurate international address scanning and verification capabilities on both high-speed transports and hand-held mobile devices. For others in the post and parcel community, please look for us at the event and we'd love to meet with you!",
     hover: "#6b7280",
   },
 ];
@@ -76,17 +76,28 @@ const posts = [
           :delay="0"
           class="px-8 opacity-0 w-full max-w-xl mt-20 lg:shrink-0 xl:max-w-2xl"
         >
-          <h1
+          <!-- <h1
             class="text-4xl font-bold tracking-tight text-zinc-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:text-6xl"
           >
-            Global leader in pattern recognition.
+            Experience efficiency with the highest performing OCR.
+          </h1> -->
+          <p
+            class="relative mt-6 text-2xl leading-8 text-zinc-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:max-w-md lg:max-w-none"
+          >
+            Experience efficiency with the highest performing Optical Character
+            Recognition (OCR) software.
+          </p>
+          <h1
+            class="mt-6 text-4xl font-bold tracking-tight text-zinc-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:text-6xl"
+          >
+            Because performance matters.
           </h1>
           <p
-            class="relative mt-6 text-lg leading-8 text-zinc-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:max-w-md lg:max-w-none"
+            class="relative mt-6 text-2xl leading-8 text-zinc-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] sm:max-w-md lg:max-w-none"
           >
-            At RAF, our goal is to provide advanced and reliable software that
-            streamlines workflows, improves accuracy, and helps our clients make
-            better-informed decisions based on visual data.
+            RAF is a trusted leader in pattern recognition with more than 30
+            years in the post and parcel industry. Our innovative solutions are
+            based on adaptive intelligence and machine learning.
           </p>
           <div class="mt-10 flex items-center gap-x-6">
             <NuxtLink
@@ -111,24 +122,24 @@ const posts = [
           <div class="mr-auto w-44 flex-none sm:mr-0 sm:pt-52 lg:pt-36">
             <SpotlightCard
               :delay="200"
-              image="ArgosyPostFeature.webp"
+              image="ArgosyPostFeature2.png"
               link="#ArgosyPostSolution"
             />
             <SpotlightCard
               :delay="600"
-              image="ParcelVisionFeature.webp"
+              image="ParcelVisionFeature2.png"
               link="#ParcelVisionSolution"
             />
           </div>
           <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
             <SpotlightCard
               :delay="800"
-              image="SmartMatchFeature.webp"
+              image="SmartMatchFeature2.png"
               link="#SmartMatchSolution"
             />
             <SpotlightCard
               :delay="400"
-              image="SmartScriptFeature.webp"
+              image="SmartScriptFeature2.png"
               link="#SmartScriptSolution"
             />
           </div>

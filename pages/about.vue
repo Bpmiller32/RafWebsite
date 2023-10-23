@@ -18,11 +18,11 @@ const timeline = [
     dateTime: "2021-12",
   },
   {
-    name: "Acquired by Volaris Group",
+    name: "Sig Verify",
     description:
-      "RAF Technology was acquired by Volaris Group which would support us with additional resources and global reach.",
-    date: "September 2023",
-    dateTime: "2023-09",
+      "RAF Technology released Sig Verify as a signature verification solution for government agencies and commercial applications.",
+    date: "February 2022",
+    dateTime: "2022-02",
   },
   {
     name: "Argosy Mobile",
@@ -198,10 +198,10 @@ const people = [
                 class="flex flex-col-reverse gap-y-4 opacity-0"
               >
                 <dt class="text-base leading-7 text-gray-600">
-                  Letters, flats, and parcels categorized
+                  Letters, flats, and parcels read and dispatched
                 </dt>
                 <dd class="text-5xl font-semibold tracking-tight text-gray-900">
-                  1.98 trillion
+                  3 trillion
                 </dd>
               </div>
             </dl>
@@ -218,7 +218,7 @@ const people = [
       class="opacity-0"
     >
       <!-- Timeline section -->
-      <section class="mt-32 mx-auto max-w-7xl px-6 lg:px-8">
+      <section class="mt-20 mx-auto max-w-7xl px-6 lg:px-8">
         <div
           class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4"
         >
@@ -253,7 +253,7 @@ const people = [
       </section>
 
       <!-- Image section -->
-      <section class="mt-32 xl:mx-auto xl:max-w-7xl xl:px-8">
+      <section class="mt-20 xl:mx-auto xl:max-w-7xl xl:px-8">
         <img
           src="~/assets/GroupPhotoBuilding.webp"
           alt="RAF company group photo"
@@ -293,9 +293,8 @@ const people = [
                 Get in touch
               </h2>
               <p class="mt-4 leading-7 text-gray-600">
-                Have questions or need further information? Contact us now to
-                speak with our knowledgeable team and discover how our expertise
-                can benefit you.
+                Contact us to learn more about our solutions, give our products
+                a try, get support, or discuss partnership opportunities.
               </p>
 
               <dl class="mt-6 space-y-4 text-base leading-7 text-gray-600">

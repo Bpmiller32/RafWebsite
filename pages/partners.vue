@@ -96,7 +96,8 @@ const partners = [
         :delay="0"
         class="text-center text-lg font-semibold leading-8 text-gray-900 opacity-0"
       >
-        Trusted by the world’s most innovative teams
+        RAF partners with top original equipment manufacturers in the post and
+        parcel industry.
       </h2>
 
       <!-- Logos -->
