@@ -34,18 +34,18 @@ const timeline = [
 ];
 
 const people = [
-  {
-    name: "Dave Reeves",
-    role: "General Manager",
-    image: "DaveAbout.jpg",
-    linkedinUrl: "https://www.linkedin.com/in/dave-reeves-2a854",
-    description1:
-      "Dave is a proven corporate executive with over 20 years of experience in the technology industry. He has a remarkable track record, having served as an executive or advisor in transactions totaling over $500 million, showcasing his exceptional leadership skills in successfully growing and leading technology businesses.",
-    description2:
-      "Prior to being appointed CEO, Dave joined RAF as the Chief Financial Officer in November 2004. He previously served as the CFO of Mindplay LLC (acquired by Bally Gaming) and as CFO for Wavtrace where he successfully negotiated a strategic partnering transaction between Wavtrace and Harris Corporation.",
-    description3:
-      "Dave possesses a diverse skill set encompassing leadership, financial management, accounting, and administration. His expertise includes capital raising, system implementation, and financial reporting, showcasing a well-rounded background that contributes to his ability to excel in various areas of business management.",
-  },
+  // {
+  //   name: "Dave Reeves",
+  //   role: "General Manager",
+  //   image: "DaveAbout.jpg",
+  //   linkedinUrl: "https://www.linkedin.com/in/dave-reeves-2a854",
+  //   description1:
+  //     "Dave is a proven corporate executive with over 20 years of experience in the technology industry. He has a remarkable track record, having served as an executive or advisor in transactions totaling over $500 million, showcasing his exceptional leadership skills in successfully growing and leading technology businesses.",
+  //   description2:
+  //     "Prior to being appointed CEO, Dave joined RAF as the Chief Financial Officer in November 2004. He previously served as the CFO of Mindplay LLC (acquired by Bally Gaming) and as CFO for Wavtrace where he successfully negotiated a strategic partnering transaction between Wavtrace and Harris Corporation.",
+  //   description3:
+  //     "Dave possesses a diverse skill set encompassing leadership, financial management, accounting, and administration. His expertise includes capital raising, system implementation, and financial reporting, showcasing a well-rounded background that contributes to his ability to excel in various areas of business management.",
+  // },
   {
     name: "William Brandt",
     role: "Vice President of Business Development",
