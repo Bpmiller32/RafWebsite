@@ -57,12 +57,15 @@ useHead({
         <div class="-m-1.5 p-1.5">
           <span class="sr-only">Your Company</span>
           <NuxtLink class="flex" to="/" aria-label="Go to home">
-            <div class="h-28 w-1"></div>
             <ClientOnly>
-              <Vue3Lottie
-                :animationData="RafLogo"
-                class="h-28 w-28"
-                :loop="0"
+              <LottieAnimation
+                :animation-data="RafLogo"
+                :width="112"
+                :height="112"
+                :loop="false"
+                @loaded="() => console.log('RAF Logo loaded')"
+                @error="(error) => console.error('RAF Logo error:', error)"
+                @complete="() => console.log('RAF Logo animation complete')"
               />
             </ClientOnly>
           </NuxtLink>
@@ -150,16 +153,17 @@ useHead({
     </nav>
 
     <!-- Mobile menu -->
-    <Dialog
-      as="div"
-      class="lg:hidden"
-      @close="mobileMenuOpen = false"
-      :open="mobileMenuOpen"
-    >
-      <div class="fixed inset-0 z-40" />
-      <DialogPanel
-        class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+    <ClientOnly>
+      <Dialog
+        as="div"
+        class="lg:hidden"
+        @close="mobileMenuOpen = false"
+        :open="mobileMenuOpen"
       >
+        <div class="fixed inset-0 z-40" />
+        <DialogPanel
+          class="fixed inset-y-0 right-0 z-40 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
         <div class="flex items-center justify-between">
           <NuxtLink
             @click="mobileMenuOpen = false"
@@ -206,8 +210,9 @@ useHead({
             </div>
           </div>
         </div>
-      </DialogPanel>
-    </Dialog>
+        </DialogPanel>
+      </Dialog>
+    </ClientOnly>
 
     <!-- Bottom shadow, needed for animating in -->
     <div

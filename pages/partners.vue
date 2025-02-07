@@ -81,6 +81,26 @@ const partners = [
     websiteUrl: "https://www.zebra.com/us/en.html",
     linkedInUrl: "https://www.linkedin.com/company/zebra-technologies",
   },
+
+  {
+    name: "Parascript",
+    imageUrl: "ParascriptLogo.webp",
+    description:
+      "Parascript is a leading provider of automated data capture software. Currently recognizing more than 68 million documents daily, Parascript’s Total Recognition technology converts paper-based information on mail, parcels, forms and checks into computer-useable data. It’s the only complete technology that recognizes all character types – cursive, handprint and machine print – on all forms.",
+    websiteName: "Parascript.com",
+    websiteUrl: "https://www.parascript.com",
+    linkedInUrl: "https://www.linkedin.com/company/parascript",
+  },
+
+  {
+    name: "Global Data Consortium",
+    imageUrl: "GdcLogo.webp",
+    description:
+      "Global Data Consortium (GDC) has teamed up with RAF Technology to bring together the most current, comprehensive, and accurate data from around the world with cutting-edge data treatment and fuzzy data matching technology all hosted through easy and effective web solutions or native software. GDC facilitates data, technology, and web solutions, helping customers access new markets and strengthen position in existing markets.",
+    websiteName: "GlobalDataConsortium.com",
+    websiteUrl: "https://www.globaldataconsortium.com",
+    linkedInUrl: "https://www.linkedin.com/company/global-data-consortium",
+  },
 ];
 </script>
 

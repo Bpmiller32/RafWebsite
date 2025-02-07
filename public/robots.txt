@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Allow all crawlers access to all content
+Disallow:
+
+# Sitemap location (if implemented in the future)
+# Sitemap: https://www.rafautomation.com/sitemap.xml
